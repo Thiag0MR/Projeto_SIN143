@@ -8,13 +8,13 @@ body {
     background-color: rgb(252,252,252);
 }
 
-.cabecalho {
+#cabecalho {
     width: 80%;
     height: 80px;
     margin: auto;
 }
 
-.cabecalho .logo {
+#cabecalho .logo {
     width: 250px;
     height: 80px;
     background-image: url(../images/logo1.png);
@@ -23,11 +23,11 @@ body {
     float: left;
 }
 
-.cabecalho ul {
+#cabecalho ul {
     height: inherit;
 }
 
-.cabecalho ul li {
+#cabecalho ul li {
     display: inline-block;
     float: right;
     width: auto;
@@ -35,7 +35,7 @@ body {
     padding: 15px 15px;
 }
 
-.cabecalho a {
+#cabecalho a {
     text-decoration: none;
     font-size: 20px;
     color: black;
@@ -43,7 +43,7 @@ body {
     top: 10px;
 }
 
-.cabecalho ul li:nth-child(1) a {
+#cabecalho ul li:nth-child(1) a {
     border: 2px solid #90bf5a;
     border-radius: 5px;
     padding: 10px 10px;
@@ -51,7 +51,7 @@ body {
     font-weight: bold;
 }
 
-.cabecalho ul li:nth-child(1) a:hover {
+#cabecalho ul li:nth-child(1) a:hover {
     border: 2px solid #90bf5a;
     border-radius: 5px;
     padding: 10px 10px;
@@ -59,7 +59,7 @@ body {
     color: white;
 }
 
-.cabecalho ul li:nth-child(2) a:hover {
+#cabecalho ul li:nth-child(2) a:hover {
     border-bottom: 2px solid #90bf5a;
 }
 
@@ -82,7 +82,7 @@ body {
     /* background-size: 100% 100%; */
     background-size: cover;
     background-position: center;
-    opacity: 0.9;
+    opacity: 0.85;
     z-index: -1;
 
 }
@@ -99,10 +99,15 @@ body {
     font-weight: 600;
 }
 
+#ConteudoImagem h3{
+    color: #444444;
+    margin-top: 10px;
+}
+
 #divBusca form {
     display: inline-block;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 55px;
     border-width: 6px;
     border-style: solid;
     border-color: rgba(100, 100, 100, 0.4);
@@ -110,7 +115,7 @@ body {
 }
 
 #divBusca input[type=text]{
-    width: 500px;
+    width: 600px;
     height: 50px;
     display: inline-block;
     float: left;
@@ -120,6 +125,7 @@ body {
     padding: 10px 10px;
     outline: 0;
     border: 0;
+    font-size: 15px;
 }
 
 #divBusca input[type=submit]{
@@ -133,7 +139,16 @@ body {
     background-color: #ff3c0c;
     color: white;
     border: 2px solid #ff3c0c;
+    font-size: 15px;
 }
+
+#divBusca input[type=submit]:hover {
+    background-color: #f7360b;
+    border: 2px solid #f7360b;
+    cursor: pointer;
+}
+
+
 
 #SecaoCategorias {
     width: 100%;
@@ -244,5 +259,106 @@ body {
 .PagItem img{
     width: 100%;
     max-height: 50%;
+}
 
+#rodape {
+    width: 100%;
+    height: 250px;
+    background-color: #f5f5f5;
+}
+
+#rodape .container{
+    width: 80%;
+    margin: auto;
+}
+
+#rodape .co{
+    height: 200px;
+    padding-top: 50px;
+}
+#rodape .ca {
+    height: 40px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#rodape .bloco{
+    width: 33.3%;
+    display: inline-block;
+    float: left;
+    background-color: #f5f5f5;
+    text-align: left;
+}
+
+#rodape ul{
+    padding-top: 20px;
+}
+
+#rodape li{
+    list-style-type: none;
+}
+
+#rodape .socialIcon {
+    display: inline-block;
+}
+
+#rodape a{
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+}
+
+#rodape .newsletter {
+    padding-top: 20px;
+}
+
+#rodape .newsletter input[type=text] {
+    width: 78%;
+    padding: 10px;
+}
+
+#rodape .newsletter input[type=submit] {
+    width: 20%;
+    padding: 10px;
+}
+
+/*Código dos ícones das redes sociais */
+
+/* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-youtube {
+    background: #bb0002;
+    color: white;
+}
+
+.fa-instagram {
+    background-color: #135486;
+    color: white;
 }
