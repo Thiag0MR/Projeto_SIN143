@@ -190,3 +190,59 @@ body {
     width: 32px;
     height: 32px;
 }
+
+.Item{
+    float: left;
+    font-family: Verdana, sans-serif;
+    border: solid 1px #ccc;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,0.3);
+    height: 300px;
+    width: 260px;
+    margin: 5px 20px;
+    padding: 5px;
+}
+.Item img{
+    width: 100%;
+    max-height: 50%;
+
+}
+.Item-info{
+    padding: 10px;
+    height: 90px;
+    overflow: hidden;
+}
+.Item-info h4{
+    font-size: 1.4em;
+    font-weight: 100;
+    margin: 0px;
+}
+.Item-preco{
+    float: right;
+    padding: 3px;
+}
+.preco-de{
+    text-decoration: line-through;
+    color: black;
+}
+.preco-por{
+    color: Black;
+    font-weight: bold;
+    font-size: 1.0em;
+}
+
+.PagItem{
+    float: left;
+    font-family: Verdana, sans-serif;
+    border: solid 1px #ccc;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,0.3);
+    height: 700px;
+    width: 500px;
+    margin: 5px 20px;
+    padding: 5px;
+}
+
+.PagItem img{
+    width: 100%;
+    max-height: 50%;
+
+}
