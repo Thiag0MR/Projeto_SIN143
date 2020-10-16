@@ -82,6 +82,7 @@ body {
     /* background-size: 100% 100%; */
     background-size: cover;
     background-position: center;
+    /* object-fit: cover; */
     opacity: 0.85;
     z-index: -1;
 
@@ -172,7 +173,7 @@ body {
     height: 140px;
     display: inline-block;
     text-align: center;
-    margin: 20px 0px;
+    margin: 20px 0;
     float: left;
 }
 
@@ -180,13 +181,13 @@ body {
     background-color: #90bf5a;
 }
 
-#SecaoCategorias .item a{
+#SecaoCategorias .item a {
+    width: inherit;
+    height: inherit;
     text-decoration: none;
     display: inline-block;
-    /* height: 90px; */
-    margin-top: 25px;
     color: black;
-    text-align: center;
+    padding-top: 26px;
 }
 
 #SecaoCategorias .item span{
@@ -199,13 +200,20 @@ body {
     border-radius: 100%;
     background-color: #f1f3f4;
     margin: auto;
+    margin-bottom: 5px;
 }
+
+#SecaoCategorias .item small {
+    display: block;
+}
+
 
 #SecaoCategorias .item span img{
     width: 32px;
     height: 32px;
 }
 
+/*
 .Item{
     float: left;
     font-family: Verdana, sans-serif;
@@ -259,11 +267,49 @@ body {
 .PagItem img{
     width: 100%;
     max-height: 50%;
+} */
+
+#SecaoVagasRecentes {
+    width: 100%;
+    /* height: 75vh; */
+    height: auto;
+    background-color: #eee;
+}
+
+.slider {
+    /* max-width: 1150px; */
+    /* overflow: hidden; */
+    display: flex;
+}
+
+.slider .card {
+    background: red;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.slider .card .img {
+    height: 200px;
+    width: 100%;
+}
+
+.slider .card .img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.slider .card .content button {
+    transition: 0.2s;
+}
+
+.slider .card .content button:hover {
+    transform: scale(1.2);
 }
 
 #rodape {
     width: 100%;
-    height: 250px;
+    height: 25vh;
     background-color: #f5f5f5;
 }
 
