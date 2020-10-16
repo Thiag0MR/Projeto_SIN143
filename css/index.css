@@ -363,21 +363,16 @@ body {
 
 /*Slide 1, logo*/
 #slide {
-    position: absolute;
-    left: -250px;
-    -webkit-animation: slide 0.5s forwards;
-    -webkit-animation-delay: 2s;
-    animation: slide 0.5s forwards;
-    animation-delay: 2s;
+    position: relative;
+    animation: mymove 8s forwards;
 }
 
-@-webkit-keyframes slide {
-    100% { left: 0; }
-}
-
-@keyframes slide {
-    100% { left: 0; }
-}
+@keyframes mymove {
+    0%   {right: 200px;}
+    25%  {right: 0px;}
+    75%  {right: 200px}
+    100% {right: 0px;}
+  }
 .wrapper:hover #slide {
     transition: 1s;
     left: 0;
