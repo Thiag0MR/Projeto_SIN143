@@ -381,3 +381,77 @@ body {
     width: 250px;
     height: 80px;
 }
+
+/* --------------------------------------- Slide 2 fotos */
+.slidershow {
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+.navigation {
+    position: absolute;
+    bottom: 20px;
+    top: 1000px;
+    left: 1150px;
+    display: flex;
+}
+
+.bar {
+    width: 30px;
+    height: 10px;
+    border: 2px solid #0e9720;
+    margin: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+    z-index: 2;
+}
+
+.bar:hover {
+    background: rgb(4, 247, 16);
+}
+
+input[name="r"] {            position: absolute;
+    visibility: hidden;
+}
+
+.slides {
+    position: absolute;
+    top: 800px;
+    left: 1000px;
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+
+.slide {
+    width: 20%;
+    transition: 1.0s;
+
+}
+
+.slide img {
+    /* Distância de visão da imagem */
+    width: 450px;
+    height: 220px;
+}
+
+r1:checked~.s1 {
+    margin-left: 500px;
+}
+
+#r2:checked~.s1 {
+    margin-left: -20%;
+}
+
+#r3:checked~.s1 {
+    margin-left: -40%;
+}
+
+#r4:checked~.s1 {
+    margin-left: -60%;
+}
+
+#r5:checked~.s1 {
+    margin-left: -80%;
+}
