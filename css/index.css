@@ -326,107 +326,7 @@ body {
     height: 32px;
 }
 
-/*
-.Item{
-    float: left;
-    font-family: Verdana, sans-serif;
-    border: solid 1px #ccc;
-    box-shadow: 0 4px 20px 0 rgba(0,0,0,0.3);
-    height: 300px;
-    width: 260px;
-    margin: 5px 20px;
-    padding: 5px;
-}
-.Item img{
-    width: 100%;
-    max-height: 50%;
-
-}
-.Item-info{
-    padding: 10px;
-    height: 90px;
-    overflow: hidden;
-}
-.Item-info h4{
-    font-size: 1.4em;
-    font-weight: 100;
-    margin: 0px;
-}
-.Item-preco{
-    float: right;
-    padding: 3px;
-}
-.preco-de{
-    text-decoration: line-through;
-    color: black;
-}
-.preco-por{
-    color: Black;
-    font-weight: bold;
-    font-size: 1.0em;
-}
-
-.PagItem{
-    float: left;
-    font-family: Verdana, sans-serif;
-    border: solid 1px #ccc;
-    box-shadow: 0 4px 20px 0 rgba(0,0,0,0.3);
-    height: 700px;
-    width: 500px;
-    margin: 5px 20px;
-    padding: 5px;
-}
-
-.PagItem img{
-    width: 100%;
-    max-height: 50%;
-} */
-
-#SecaoVagasRecentes {
-    width: 100%;
-    /* height: 75vh; */
-    height: auto;
-    background-color: #555;
-}
-
-#SecaoVagasRecentes .container {
-    width: 80%;
-    /* height: 75vh; */
-    padding: 30px 15px;
-    margin: auto;
-    background-color: #666;
-}
-
-#SecaoVagasRecentes .slider {
-    /* max-width: 1150px; */
-    /* overflow: hidden; */
-    display: flex;
-}
-
-#SecaoVagasRecentes .slider .card {
-    background: red;
-    flex: 1;
-    margin: 0 10px;
-}
-
-#SecaoVagasRecentes .slider .card .img {
-    height: 200px;
-    width: 100%;
-}
-
-#SecaoVagasRecentes .slider .card .img img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-#SecaoVagasRecentes .slider .card .content button {
-    transition: 0.2s;
-}
-
-#SecaoVagasRecentes .slider .card .content button:hover {
-    transform: scale(1.2);
-}
+/*Rodapé */
 
 #rodape {
     width: 100%;
@@ -551,20 +451,22 @@ body {
     width: 250px;
     height: 80px;
 }
-<<<<<<< HEAD
 
 /* --------------------------------------- Slide 2 fotos */
 .slidershow {
+    left: 500px;
     overflow: hidden;
     z-index: 1;
+    width: 500px;
+    height: 300px;
 }
 
 
 .navigation {
     position: absolute;
     bottom: 20px;
-    top: 1000px;
-    left: 1150px;
+    top: 1270px;
+    left: 150px;
     display: flex;
 }
 
@@ -587,9 +489,6 @@ input[name="r"] {            position: absolute;
 }
 
 .slides {
-    position: absolute;
-    top: 800px;
-    left: 1000px;
     width: 500%;
     height: 100%;
     display: flex;
@@ -626,5 +525,3 @@ r1:checked~.s1 {
 #r5:checked~.s1 {
     margin-left: -80%;
 }
-=======
->>>>>>> ddb0e4495710b9b570e8f6ba09997074bc0b9276
