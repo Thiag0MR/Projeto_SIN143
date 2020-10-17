@@ -15,8 +15,30 @@
             </div>
             <ul>
                 <li><a href="">Anunciar Vaga</a></li>
-                <li><a href="">Entrar</a></li>
+                <li class="dropdown">
+                    <a href="">Entrar <span class="arrow-down"></span></a>
+                    <div class="dropdown-content">
+                      <form>
+                        <!-- <label for="Email">Email</label> -->
+                        <input class="block" type="email" name="Email" placeholder="Email" required>
+                        <!-- <label for="Password">Senha</label> -->
+                        <input class="block" type="password" name="Password" placeholder="Senha" required>
+                        <div class="block checkbox">
+                            <input  type="checkbox" name="lembrar-me">
+                            <label for="lembrar-me">Lembrar-me ?</label>
+                        </div>
+
+                        <input class="block" type="submit" value="Entrar">
+                        <div class="block forgot-password">
+                            <a href="#">Esqueceu a senha ?</a>
+                        </div>
+
+
+                      </form>
+                    </div>
+                </li>
             </ul>
+
         </div>
 
         <div id = "SecaoPrincipal">
@@ -67,6 +89,7 @@
         </section>
 
         <section id="SecaoVagasRecentes">
+<<<<<<< HEAD
             <div class="slidershow">
 
                 <div class="slides">
@@ -99,6 +122,43 @@
                     <label for="r3" class="bar"></label>
                     <label for="r4" class="bar"></label>
                     <label for="r5" class="bar"></label>
+=======
+            <div class="container">
+                <div class="slider">
+                    <div class="card">
+                        <div class="img"><img src="https://picsum.photos/500" alt=""></div>
+                        <div class="content">
+                            <div class="title">Titulo</div>
+                            <div class="subtitle">Subtitulo</div>
+                            <p>Lorem Ipsum has been the industry's standard dummy text ever
+                                since the 1500s, when an unknown printer took a galley of type and
+                                scrambled it to make a type specimen book.</p>
+                            <div class="btn"><button>Read more</button></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img"><img src="https://picsum.photos/500" alt=""></div>
+                        <div class="content">
+                            <div class="title">Titulo</div>
+                            <div class="subtitle">Subtitulo</div>
+                            <p>Lorem Ipsum has been the industry's standard dummy text ever
+                                since the 1500s, when an unknown printer took a galley of type and
+                                scrambled it to make a type specimen book.</p>
+                            <div class="btn"><button>Read more</button></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img"><img src="https://picsum.photos/500" alt=""></div>
+                        <div class="content">
+                            <div class="title">Titulo</div>
+                            <div class="subtitle">Subtitulo</div>
+                            <p>Lorem Ipsum has been the industry's standard dummy text ever
+                                since the 1500s, when an unknown printer took a galley of type and
+                                scrambled it to make a type specimen book.</p>
+                            <div class="btn"><button>Read more</button></div>
+                        </div>
+                    </div>
+>>>>>>> ddb0e4495710b9b570e8f6ba09997074bc0b9276
                 </div>
             </div>
         </section>

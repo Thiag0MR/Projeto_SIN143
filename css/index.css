@@ -33,7 +33,7 @@ body {
     padding: 15px 15px;
 }
 
-#cabecalho a {
+#cabecalho ul li > a {
     text-decoration: none;
     font-size: 20px;
     color: black;
@@ -41,6 +41,7 @@ body {
     top: 10px;
 }
 
+/* Botão Anunciar Vaga */
 #cabecalho ul li:nth-child(1) a {
     border: 2px solid #90bf5a;
     border-radius: 5px;
@@ -49,6 +50,7 @@ body {
     font-weight: bold;
 }
 
+/* Botão Anunciar Vaga */
 #cabecalho ul li:nth-child(1) a:hover {
     border: 2px solid #90bf5a;
     border-radius: 5px;
@@ -57,8 +59,118 @@ body {
     color: white;
 }
 
-#cabecalho ul li:nth-child(2) a:hover {
-    border-bottom: 2px solid #90bf5a;
+#cabecalho .dropdown {
+    position: relative;
+}
+
+#cabecalho .dropdown-content {
+    display: none;
+    position: absolute;
+    width: 300px;
+    top: 100%;
+    right: calc(50% - 150px);
+    padding: 25px 40px 15px 40px;
+    background-color: white;
+    z-index: 1;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 2px solid #90bf5a;
+}
+
+#cabecalho .dropdown:hover {
+    background-color: #90bf5a;
+    cursor: pointer;
+}
+
+#cabecalho .dropdown:hover > a {
+    color: white;
+}
+
+#cabecalho .dropdown:hover .dropdown-content {
+    display: block;
+    cursor: default;
+}
+
+#cabecalho .dropdown .arrow-down {
+    border: solid #90bf5a;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    vertical-align: 15%;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+#cabecalho .dropdown:hover .arrow-down {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+}
+
+#cabecalho .dropdown-content .block {
+    display: block;
+    width: 220px;
+    height: 50px;
+    margin: 7px 0;
+}
+
+#cabecalho .dropdown-content input[type=Email],
+#cabecalho .dropdown-content input[type=password] {
+    font-size: 16px;
+    padding-top: 5px;
+    border: 0;
+    border-bottom: 1px solid #90bf5a;
+    color: rgb(111,124,129);
+}
+
+#cabecalho .dropdown-content input[type=submit] {
+    background-color: #90bf5a;
+    color: white;
+    border: 1px solid #90bf5a;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: transform .2s;
+}
+
+#cabecalho .dropdown-content input[type=submit]:hover {
+    transform: scale(0.9);
+    cursor: pointer;
+}
+
+#cabecalho .dropdown-content .checkbox {
+    height: auto;
+    padding: 7px 0;
+}
+
+#cabecalho .dropdown-content .checkbox input {
+    margin-right: 5px;
+}
+
+#cabecalho .dropdown-content input[type=password]::placeholder,
+#cabecalho .dropdown-content input[type=Email]::placeholder {
+    color: rgb(111,124,129);
+}
+
+#cabecalho .dropdown-content input[type=password]:focus,
+#cabecalho .dropdown-content input[type=Email]:focus {
+    outline: none;
+}
+
+#cabecalho .dropdown-content .forgot-password {
+    text-align: right;
+    height: auto;
+    margin-top: 9px;
+}
+
+#cabecalho .dropdown-content .forgot-password > a {
+    color: rgb(111,124,129);
+    font-size: 16px;
+    text-decoration: none;
+}
+
+#cabecalho .dropdown-content label {
+    color: rgb(111,124,129);
 }
 
 #ImagemPrincipal{
@@ -80,6 +192,7 @@ body {
     /* background-size: 100% 100%; */
     background-size: cover;
     background-position: center;
+    /* object-fit: cover; */
     opacity: 0.85;
     z-index: -1;
 
@@ -170,21 +283,24 @@ body {
     height: 140px;
     display: inline-block;
     text-align: center;
-    margin: 20px 0px;
+    margin: 20px 0;
     float: left;
+    transition: transform .2s;
 }
 
 #SecaoCategorias .item:hover{
     background-color: #90bf5a;
+    transform: scale(1.1);
 }
 
-#SecaoCategorias .item a{
+#SecaoCategorias .item a {
+    width: inherit;
+    height: inherit;
     text-decoration: none;
     display: inline-block;
-    /* height: 90px; */
-    margin-top: 25px;
     color: black;
-    text-align: center;
+    padding-top: 26px;
+
 }
 
 #SecaoCategorias .item span{
@@ -197,13 +313,20 @@ body {
     border-radius: 100%;
     background-color: #f1f3f4;
     margin: auto;
+    margin-bottom: 5px;
 }
+
+#SecaoCategorias .item small {
+    display: block;
+}
+
 
 #SecaoCategorias .item span img{
     width: 32px;
     height: 32px;
 }
 
+/*
 .Item{
     float: left;
     font-family: Verdana, sans-serif;
@@ -257,11 +380,58 @@ body {
 .PagItem img{
     width: 100%;
     max-height: 50%;
+} */
+
+#SecaoVagasRecentes {
+    width: 100%;
+    /* height: 75vh; */
+    height: auto;
+    background-color: #555;
+}
+
+#SecaoVagasRecentes .container {
+    width: 80%;
+    /* height: 75vh; */
+    padding: 30px 15px;
+    margin: auto;
+    background-color: #666;
+}
+
+#SecaoVagasRecentes .slider {
+    /* max-width: 1150px; */
+    /* overflow: hidden; */
+    display: flex;
+}
+
+#SecaoVagasRecentes .slider .card {
+    background: red;
+    flex: 1;
+    margin: 0 10px;
+}
+
+#SecaoVagasRecentes .slider .card .img {
+    height: 200px;
+    width: 100%;
+}
+
+#SecaoVagasRecentes .slider .card .img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#SecaoVagasRecentes .slider .card .content button {
+    transition: 0.2s;
+}
+
+#SecaoVagasRecentes .slider .card .content button:hover {
+    transform: scale(1.2);
 }
 
 #rodape {
     width: 100%;
-    height: 250px;
+    /* height: 25vh; */
+    height: auto;
     background-color: #f5f5f5;
 }
 
@@ -381,6 +551,7 @@ body {
     width: 250px;
     height: 80px;
 }
+<<<<<<< HEAD
 
 /* --------------------------------------- Slide 2 fotos */
 .slidershow {
@@ -455,3 +626,5 @@ r1:checked~.s1 {
 #r5:checked~.s1 {
     margin-left: -80%;
 }
+=======
+>>>>>>> ddb0e4495710b9b570e8f6ba09997074bc0b9276
