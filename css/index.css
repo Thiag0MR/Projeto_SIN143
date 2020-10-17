@@ -207,12 +207,15 @@ body {
 
 #ConteudoImagem h1{
     color: #444444;
-    font-weight: 600;
+    font-size: 70px;
+    font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
 #ConteudoImagem h3{
     color: #444444;
     margin-top: 10px;
+    font-size: 30px;
+    font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
 #divBusca form {
@@ -472,7 +475,7 @@ body {
 .bar {
     width: 30px;
     height: 10px;
-    border: 2px solid #0e9720;
+    border: 2px solid #313133;
     margin: 6px;
     cursor: pointer;
     transition: 0.4s;
@@ -480,7 +483,7 @@ body {
 }
 
 .bar:hover {
-    background: rgb(4, 247, 16);
+    background: rgb(85, 87, 85);
 }
 
 input[name="r"] {            position: absolute;
