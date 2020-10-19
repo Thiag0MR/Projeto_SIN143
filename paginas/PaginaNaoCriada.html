@@ -2,9 +2,12 @@
 <html>
     <head>
         <title>Pagina em criação</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
         <style>
-            .w3-blue,.w3-hover-blue:hover{color:#fff!important;background-color:#2196F3!important}
+            .background-blue{
+                color:#fff!important;
+                background-color:#2196F3!important;
+            }
             .divText h3{
                 text-align: center;
                 font-size: x-large;
@@ -13,12 +16,20 @@
                 padding: 40px;
                 font-size: large;
             }
+            .botao-fechar {
+                font-size: 40px;
+                display: flex;
+                justify-content: flex-end;
+            }
+            .botao-fechar:hover {
+                cursor: pointer;
+            }
         </style>
     </head>
     <body>
-        <div class="w3-blue divText">
+        <div class="background-blue divText">
             <span onclick="this.parentElement.style.display='none'"
-            class="w3-button w3-large w3-display-topright">&times;</span>
+            class="botao-fechar">&#215;</span>
             <h3>Informação!</h3>
             <p>Esta página ainda não foi criada!</p>
           </div>

@@ -13,27 +13,25 @@
                     <img id="tamanhoImg" src="images/logo.png">
                 </div>
             </div>
+            <!-- <span class=""></span> -->
             <ul>
                 <li><a href="./paginas/PaginaNaoCriada.html">Anunciar Vaga</a></li>
                 <li class="dropdown">
-                    <a href="">Entrar <span class="arrow-down"></span></a>
+                    <div class="div-entrar">
+                        <a href="">Entrar <span class="arrow-down"></span></a>
+                    </div>
                     <div class="dropdown-content">
                       <form>
-                        <!-- <label for="Email">Email</label> -->
                         <input class="block" type="email" name="Email" placeholder="Email" required>
-                        <!-- <label for="Password">Senha</label> -->
                         <input class="block" type="password" name="Password" placeholder="Senha" required>
                         <div class="block checkbox">
                             <input  type="checkbox" name="lembrar-me">
                             <label for="lembrar-me">Lembrar-me ?</label>
                         </div>
-
                         <input class="block" type="submit" value="Entrar">
                         <div class="block forgot-password">
                             <a href="#">Esqueceu a senha ?</a>
                         </div>
-
-
                       </form>
                     </div>
                 </li>
@@ -48,8 +46,12 @@
                     <h3>As melhores vagas em um só lugar !</h3>
                     <div id="divBusca">
                       <form action="/action_page.php">
-                        <input type="text" id="txtBusca" placeholder="Buscar..."/>
-                        <input type="submit" id="Pesquisar" value="Pesquisar">
+                        <div id="txtBusca">
+                            <input type="text" placeholder="Buscar..."/>
+                        </div>
+                        <div id="Pesquisar">
+                            <input type="submit" value="Pesquisar">
+                        </div>
                       </form>
                     </div>
                 </div>
@@ -88,7 +90,7 @@
             </div>
         </section>
 
-        <section >
+        <section id="SecaoSlider">
             <div class="slidershow">
                 <div class="slides">
                     <input type="radio" name="r" id="r1" checked>
@@ -96,7 +98,7 @@
                     <input type="radio" name="r" id="r3">
                     <input type="radio" name="r" id="r4">
                     <input type="radio" name="r" id="r5">
-    
+
                     <div  class="slide s1">
                         <a href="./paginas/Camas/CamaMedia.html"><img src="./paginas/Camas/CamaMedia.jpg" alt="Cama"></a>
                     </div>
@@ -113,7 +115,7 @@
                         <a href="./paginas/Redes/RedeBarata.html"><img src="./paginas/Redes/RedeBarata.jpg" alt="Rede"></a>
                     </div>
                 </div>
-    
+
                 <div class="navigation">
                     <label for="r1" class="bar"></label>
                     <label for="r2" class="bar"></label>
@@ -124,7 +126,7 @@
             </div>
         </section>
 
-        <div class="divTexto">
+        <div id="divTexto">
             <h3>Nunc velit lectus</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin urna in nibh iaculis dignissim. Donec efficitur nunc vitae ultricies mattis. Donec non nisl sit amet est placerat cursus in nec justo. Etiam aliquam, quam mollis ornare tincidunt, turpis nibh elementum magna, ut porttitor metus risus eget odio. Quisque ante urna, consequat blandit nisi vitae, eleifend dapibus nisl. Phasellus pulvinar urna sed est convallis, in fringilla ex lobortis. Maecenas sit amet purus tempor, ornare mi ut, dapibus dolor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed commodo lectus in tempus viverra. Vivamus imperdiet lorem et sapien viverra, eu venenatis dolor accumsan.</p>
             <p>Donec porttitor, ex ac hendrerit posuere, augue eros tristique est, nec viverra ex nisl sed elit. Fusce a sapien vitae arcu maximus faucibus. Nullam pellentesque, velit vitae vulputate volutpat, justo velit rhoncus sem, non tempor dui purus sit amet mi. Ut viverra ornare dui sed semper. Cras tincidunt, sapien eget varius tristique, nibh dolor posuere massa, sed accumsan est nisl in felis. Mauris ut risus in massa posuere dictum. Nullam id vehicula quam. Praesent at vulputate mi, a rhoncus mauris. Morbi iaculis nibh quis sollicitudin pretium. Mauris ut pretium odio. Vivamus dolor turpis, viverra luctus ipsum sit amet, varius fringilla massa.</p>
