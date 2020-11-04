@@ -17,14 +17,6 @@
     height: 90px;
     overflow: hidden;
     }
-
-    #titulo{
-        text-align: center;
-        font-size: 20px;
-        width: 100%px;
-        padding: 2px;
-        border: solid 1px black;
-    }
     #nome{
         text-align: center;
         font-size: 25px;
@@ -44,14 +36,14 @@
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
-        margin: 4px 2px;
+        margin: 2px 2px;
         -webkit-transition-duration: 0.4s; /* Safari */
         transition-duration: 0.4s;
         cursor: pointer;
         }
 
         .button1 {
-        background-color: white; 
+        background-color:Silver; 
         color: black; 
         border: 2px solid #4CAF50;
         }
@@ -60,38 +52,31 @@
         background-color: #4CAF50;
         color: white;
         }
-        #buttonalinhado{
+        #buttonHome{
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 0px;
+            left: 0px;
         }
-        #bodysol{
-            margin: 0%;
+        #buttonDuv{
+            position: absolute;
+            top: 0px;
+            right: 0px;
         }
-        #titulosol{
+        #titulo{
             width: 100%;
-            height: 50px;
+            height: 44px;
             padding: 5px;
             border: solid 2px black;
             text-align: center;
             font-size: 40px;
             background-color: Silver;
         }
+        #body{
+            margin: 0%;
+        }
         #Solucao{
             padding: 20px;
         }
-        #TituloDuv{
-            width: 100%;
-            height: 50px;
-            text-align: center;
-            padding: 5px;
-            background-color: Silver;
-            border: solid 2px black;
-        }
-        #bodyduv{
-            margin: 0%;
-        }
-
         ul {
             list-style-type: none;
             margin: 0;
