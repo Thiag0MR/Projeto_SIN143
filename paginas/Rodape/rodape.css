@@ -100,3 +100,16 @@
             background-color: #90EE90;
             color: white;
         }
+#bodyPol{
+    margin: 0%;
+    background-color: Silver;
+}
+
+#hrTam{
+    width: 1600px;
+    float: left;
+}
+#textTam{
+    width: 80%;
+    margin-left: 40px;
+}
