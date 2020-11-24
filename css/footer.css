@@ -1,0 +1,75 @@
+/*Rodape responsivo */
+@media screen and (max-width: 1200px){
+    #rodape .bloco {
+        width: 315px;
+        margin: 20px 0;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    #rodape .bloco {
+        width: 33.3%;
+    }
+}
+
+#rodape {
+    width: 100%;
+    height: auto;
+    background-color: #f5f5f5;
+}
+
+#rodape .container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#rodape .container:first-child{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 50px;
+}
+#rodape .container:last-child h6{
+    padding: 18px;
+    margin: 0;
+}
+
+#rodape .bloco{
+    height: auto;
+    background-color: #f5f5f5;
+    text-align: left;
+}
+
+#rodape ul{
+    padding-top: 20px;
+}
+
+#rodape li{
+    list-style-type: none;
+}
+
+#rodape .socialIcon {
+    display: inline-block;
+}
+
+#rodape a{
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+}
+
+#rodape .newsletter {
+    padding-top: 20px;
+}
+
+#rodape .newsletter input[type=text] {
+    width: 78%;
+    padding: 10px;
+}
+
+#rodape .newsletter input[type=submit] {
+    width: 20%;
+    padding: 10px;
+}
