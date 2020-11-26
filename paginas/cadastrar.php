@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/header.css">
         <script src="https://kit.fontawesome.com/107c433e36.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="JavaScript/ValidaFormularioCriarConta.js"></script> 
     <body>
         <?php require './header.php'; ?>
 
@@ -65,7 +66,7 @@
                 <input type="text" name="telefone" value=""> <br>
                 <span class="erro"> <?php if (isset($arrayErro['telefone'])) echo $arrayErro['telefone']."<br>"; ?></span>
 
-                <input type="submit" name="submit" value="Enviar">
+                <input type="submit" name="submit" value="Enviar" onclick="return validar()">
             </form>
         </div>
 
