@@ -33,7 +33,7 @@ class Usuario {
 
     }
 
-    public function login ($email, $senha, &$arrayErro) {
+    public function login ($email, $senha) {
         $email = $this->test_input($email);
         $senha = $this->test_input($senha);
 
@@ -48,12 +48,25 @@ class Usuario {
                 $_SESSION['login'] = $dado['idUsuario'];
                 return true;
             } else {
-                $arrayErro['geral'] = "Email ou senha inválidos";
                 return false;
             }
         }
 
     }
+
+    public static function buscarNomeUsuario($idUsuario) {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT nome FROM Usuario WHERE idUsuario = ?");
+        $sql->bindParam(1, $idUsuario);
+        if ($sql->execute() == true) {
+            if ($sql->rowCount() == 1) {
+                $dado = $sql->fetch();
+                return $dado['nome'];
+            }
+        }
+    }
+
 
     public function setNome ($nome, &$arrayErro) {
         if (preg_match("/^[a-zA-Z ]*$/", $nome)) {

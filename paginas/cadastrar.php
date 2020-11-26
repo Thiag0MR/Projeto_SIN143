@@ -6,18 +6,14 @@
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/header.css">
         <script src="https://kit.fontawesome.com/107c433e36.js" crossorigin="anonymous"></script>
-        <script src="../JavaScript/ValidaFormularioCriarConta.js"></script>
-    </head>
+        <script type="text/javascript" src="../JavaScript/ValidaFormularioCriarConta.js"></script>
     <body>
-        <?php
-            require '../config.php';
-            require './header.php'
-        ?>
+        <?php require './header.php'; ?>
 
         <div class="container">
 
             <?php
-            require '../classes/Usuario.class.php';
+            require_once '../classes/Usuario.class.php';
             $usuario = new Usuario();
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Armazena as mensagens de erro
@@ -55,19 +51,19 @@
 
 
                     <label for="nome">Nome</label>
-                    <input type="text" name="nome" value=""> <br>
+                    <input id="nome" type="text" name="nome" value=""> <br>
                     <span class="erro"> <?php if (isset($arrayErro['nome'])) echo $arrayErro['nome']."<br>"; ?></span>
 
                     <label for="email">Email</label>
-                    <input type="text" name="email" value=""> <br>
+                    <input id="email" type="text" name="email" value=""> <br>
                     <span class="erro"> <?php if (isset($arrayErro['email'])) echo $arrayErro['email']."<br>"; ?></span>
 
                     <label for="senha">Senha</label>
-                    <input type="password" name="senha" value=""> <br>
+                    <input id="senha" type="password" name="senha" value=""> <br>
                     <span class="erro"> <?php if (isset($arrayErro['senha'])) echo $arrayErro['senha']."<br>"; ?></span>
 
                     <label for="telefone">Telefone</label>
-                    <input type="text" name="telefone" value=""> <br>
+                    <input id="telefone" type="text" name="telefone" value=""> <br>
                     <span class="erro"> <?php if (isset($arrayErro['telefone'])) echo $arrayErro['telefone']."<br>"; ?></span>
 
                     <input type="submit" name="submit" onclick="validar();" value="Enviar" >

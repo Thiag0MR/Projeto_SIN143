@@ -9,7 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /*Fazendo o cabeçalho ficar responsivo*/
@@ -19,6 +19,7 @@ body {
     #cabecalho {
         width: 80%;
     }
+
     #slide {
         position: relative;
         animation: mymove 8s forwards;
@@ -67,7 +68,7 @@ body {
 
 #cabecalho ul {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
 }
 
@@ -76,38 +77,16 @@ body {
     display: flex;
 }
 
-/* #cabecalho .dropdown {
-    margin-right: 15px;
-}
-
-#cabecalho .dropdown:hover {
-    background-color: #90bf5a;
-}
-
-#cabecalho .dropdown:hover .dropdown-content {
-    display: block;
-    cursor: default;
-}
-
-#cabecalho .dropdown:hover .arrow-down {
-    border: solid white;
-    border-width: 0 3px 3px 0;
-}
-
-#cabecalho .dropdown:hover > a {
-    color: white;
-} */
-
-#cabecalho li:last-child > a {
+#cabecalho li .entrar {
     margin-right: 10px;
 }
 
-#cabecalho li:last-child > a:hover {
+#cabecalho li .entrar:hover {
     color: #90bf5a;
 }
 
 /* Botão Anunciar Vaga */
-#cabecalho ul li:first-of-type a {
+#cabecalho ul .btnAnunciarVaga {
     border: 2px solid #90bf5a;
     border-radius: 5px;
     padding: 10px 10px;
@@ -116,7 +95,7 @@ body {
 }
 
 /* Botão Anunciar Vaga */
-#cabecalho ul li:first-of-type a:hover {
+#cabecalho ul .btnAnunciarVaga:hover {
     border: 2px solid #90bf5a;
     border-radius: 5px;
     padding: 10px 10px;
@@ -131,97 +110,3 @@ body {
     color: black;
     padding: 10px 10px;
 }
-/*
-#cabecalho .dropdown {
-    position: relative;
-}
-
-#cabecalho .dropdown-content {
-    display: none;
-    position: absolute;
-    width: 300px;
-    top: 100%;
-    right: calc(50% - 150px);
-    padding: 25px 40px 15px 40px;
-    background-color: white;
-    z-index: 1;
-    font-size: 18px;
-    border-radius: 5px;
-    border: 2px solid #90bf5a;
-}
-
-#cabecalho .dropdown .arrow-down {
-    border: solid #90bf5a;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    vertical-align: 15%;
-    margin-left: 5px;
-}
-
-#cabecalho .dropdown-content .block {
-    display: block;
-    width: 220px;
-    height: 50px;
-    margin: 7px 0;
-}
-
-#cabecalho .dropdown-content input[type=Email],
-#cabecalho .dropdown-content input[type=password] {
-    font-size: 16px;
-    padding-top: 5px;
-    border: 0;
-    border-bottom: 1px solid #90bf5a;
-    color: rgb(111,124,129);
-}
-
-#cabecalho .dropdown-content input[type=submit] {
-    background-color: #90bf5a;
-    color: white;
-    border: 1px solid #90bf5a;
-    font-size: 18px;
-    border-radius: 5px;
-    transition: transform .2s;
-}
-
-#cabecalho .dropdown-content input[type=submit]:hover {
-    transform: scale(0.9);
-    cursor: pointer;
-}
-
-#cabecalho .dropdown-content .checkbox {
-    height: auto;
-    padding: 7px 0;
-}
-
-#cabecalho .dropdown-content .checkbox input {
-    margin-right: 5px;
-}
-
-#cabecalho .dropdown-content input[type=password]::placeholder,
-#cabecalho .dropdown-content input[type=Email]::placeholder {
-    color: rgb(111,124,129);
-}
-
-#cabecalho .dropdown-content input[type=password]:focus,
-#cabecalho .dropdown-content input[type=Email]:focus {
-    outline: none;
-}
-
-#cabecalho .dropdown-content .forgot-password {
-    text-align: right;
-    height: auto;
-    margin-top: 9px;
-}
-
-#cabecalho .dropdown-content .forgot-password > a {
-    color: rgb(111,124,129);
-    font-size: 16px;
-    text-decoration: none;
-}
-
-#cabecalho .dropdown-content label {
-    color: rgb(111,124,129);
-} */

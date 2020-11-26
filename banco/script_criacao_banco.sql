@@ -2,15 +2,15 @@ CREATE DATABASE IF NOT EXISTS temVagaAi;
 
 CREATE TABLE IF NOT EXISTS Usuario (
     idUsuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(30),
-    email VARCHAR(30),
-    senha VARCHAR(30),
-    telefone VARCHAR(30)
+    nome VARCHAR(45),
+    email VARCHAR(45),
+    senha VARCHAR(45),
+    telefone VARCHAR(45)
 );
 
 CREATE TABLE IF NOT EXISTS Anuncio (
     idAnuncio INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    titulo VARCHAR(30),
+    titulo VARCHAR(45),
     descricao VARCHAR(150),
     valor FLOAT,
     Usuario_idUsuario INT
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS Anuncio (
 
 CREATE TABLE IF NOT EXISTS Categoria (
     idCategoria INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(15)
+    nome VARCHAR(45)
 );
 
 CREATE TABLE IF NOT EXISTS Anuncio_Categoria (
@@ -26,12 +26,21 @@ CREATE TABLE IF NOT EXISTS Anuncio_Categoria (
     Categoria_idCategoria INT
 );
 
+CREATE TABLE IF NOT EXISTS Imagem (
+    idImagem INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    url VARCHAR(45),
+    Anuncio_idAnuncio INT
+)
+
 ALTER TABLE Anuncio
-	ADD FOREIGN KEY (`Usuario_idUsuario`) REFERENCES Usuario(idUsuario);
+	ADD FOREIGN KEY (Usuario_idUsuario) REFERENCES Usuario(idUsuario);
 
 ALTER TABLE Anuncio_Categoria
-	ADD FOREIGN KEY (`Anuncio_idAnuncio`) REFERENCES Anuncio(idAnuncio),
-    ADD FOREIGN KEY (`Categoria_idCategoria`) REFERENCES Categoria(idCategoria);
+	ADD FOREIGN KEY (Anuncio_idAnuncio) REFERENCES Anuncio(idAnuncio),
+    ADD FOREIGN KEY (Categoria_idCategoria) REFERENCES Categoria(idCategoria);
+
+ALTER TABLE Imagem
+	ADD FOREIGN KEY (Anuncio_idAnuncio) REFERENCES Anuncio(idAnuncio);
 
 -- DROP TABLE Anuncio_Categoria;
 -- DROP TABLE Anuncio;
