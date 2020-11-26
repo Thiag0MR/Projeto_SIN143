@@ -16,7 +16,7 @@
             <?php
             require '../classes/Usuario.class.php';
             $usuario = new Usuario();
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 // Armazena as mensagens de erro
                 $arrayErro = Array(
                     "geral" => NULL,
@@ -24,8 +24,12 @@
 
                 // Verifica se todos os campos foram preenchidos
                 if (!empty($_POST['email']) && !empty($_POST['senha'])) {
-                    if ($usuario->login($_POST['email'], $_POST['senha'])) {
-
+                    if ($usuario->login($_POST['email'], $_POST['senha'])){
+                        echo "
+                            <script type='text/javascript'>window.location.href='../index.php'</script>
+                        ";
+                    } else {
+                        $arrayErro['geral'] = "Email ou senha inválidos";
                     }
 
                 } else {
@@ -34,7 +38,7 @@
             }
             ?>
 
-            <h1>Cadastrar</h1>
+            <h1>Login</h1>
 
             <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 

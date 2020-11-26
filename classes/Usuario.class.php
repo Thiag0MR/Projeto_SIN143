@@ -33,7 +33,7 @@ class Usuario {
 
     }
 
-    public function login ($email, $senha, &$arrayErro) {
+    public function login ($email, $senha) {
         $email = $this->test_input($email);
         $senha = $this->test_input($senha);
 
@@ -48,7 +48,6 @@ class Usuario {
                 $_SESSION['login'] = $dado['idUsuario'];
                 return true;
             } else {
-                $arrayErro['geral'] = "Email ou senha inválidos";
                 return false;
             }
         }

@@ -9,7 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /*Fazendo o cabeçalho ficar responsivo*/
@@ -20,7 +20,6 @@ body {
         width: 80%;
     }
 
-    Slide 1, logo
     #slide {
         position: relative;
         animation: mymove 8s forwards;
@@ -69,7 +68,7 @@ body {
 
 #cabecalho ul {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
 }
 
@@ -78,38 +77,16 @@ body {
     display: flex;
 }
 
-/* #cabecalho .dropdown {
-    margin-right: 15px;
-}
-
-#cabecalho .dropdown:hover {
-    background-color: #90bf5a;
-}
-
-#cabecalho .dropdown:hover .dropdown-content {
-    display: block;
-    cursor: default;
-}
-
-#cabecalho .dropdown:hover .arrow-down {
-    border: solid white;
-    border-width: 0 3px 3px 0;
-}
-
-#cabecalho .dropdown:hover > a {
-    color: white;
-} */
-
-#cabecalho li:last-child > a {
+#cabecalho li .entrar {
     margin-right: 10px;
 }
 
-#cabecalho li:last-child > a:hover {
+#cabecalho li .entrar:hover {
     color: #90bf5a;
 }
 
 /* Botão Anunciar Vaga */
-#cabecalho ul li:first-of-type a {
+#cabecalho ul .btnAnunciarVaga {
     border: 2px solid #90bf5a;
     border-radius: 5px;
     padding: 10px 10px;
@@ -118,7 +95,7 @@ body {
 }
 
 /* Botão Anunciar Vaga */
-#cabecalho ul li:first-of-type a:hover {
+#cabecalho ul .btnAnunciarVaga:hover {
     border: 2px solid #90bf5a;
     border-radius: 5px;
     padding: 10px 10px;
