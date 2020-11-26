@@ -19,8 +19,6 @@ body {
     #cabecalho {
         width: 80%;
     }
-
-    Slide 1, logo
     #slide {
         position: relative;
         animation: mymove 8s forwards;

@@ -1,4 +1,6 @@
-<?php $pathRoot = str_replace($_SERVER['DOCUMENT_ROOT'], "", dirname(__FILE__, 2));?>
+<?php   $rootServer =  str_replace("\\", "/", $_SERVER['DOCUMENT_ROOT']);
+        $rootDir = str_replace("\\", "/",dirname(__FILE__, 2));
+    $pathRoot = str_replace($rootServer, "", $rootDir);?>
 
 <div id="cabecalho">
     <div class="logo">
