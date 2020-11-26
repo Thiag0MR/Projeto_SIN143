@@ -11,6 +11,7 @@ function validar() {
     var email1 = 0;
     var senha1 = 0;
     var telefone1 = 0;
+    var vazio =0;
     //Verifica nome, nome1 != 0 -> erro
     for(var i = 0;  i < nome.length; i++){
         if(nome[i] == ' ' || nome[i] == 'a' || nome[i] == 'b' || nome[i] == 'c' ||nome[i] == 'd' || nome[i] == 'e' || nome[i] == 'f' || nome[i] == 'g' ||
@@ -55,17 +56,13 @@ function validar() {
         }
     }
     //verifica telefone, senha != 0 -> erro
-    for(var i = 0;  i < telefone.length; i++){
-        if(telefone.length > 11 || telefone.length < 11){
-            telefone1++;
-        }
-        if(telefone[i] != 0 ||telefone[i] != 1 ||telefone[i] != 2 ||telefone[i] != 3 ||telefone[i] != 4 ||telefone[i] != 5 ||telefone[i] != 6 ||telefone[i] != 7 ||telefone[i] != 8 ||telefone[i] != 9 ){
-            telefone1++;
-        }
-        
+    if(isNaN(telefone)){
+        telefone1++;
     }
-    let vazio =0;
-
+    if(telefone.length > 12 || telefone.length < 11){
+        telefone1++;
+    }
+ 
     //Verifica se os campos estão vazios
     if(nome.length == 0 ||senha.length == 0 ||email.length == 0 ||telefone.length == 0 ){
         vazio++;
