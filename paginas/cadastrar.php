@@ -7,15 +7,12 @@
         <link rel="stylesheet" href="../css/header.css">
         <script src="https://kit.fontawesome.com/107c433e36.js" crossorigin="anonymous"></script>
     <body>
-        <?php
-            require '../config.php';
-            require './header.php'
-        ?>
+        <?php require './header.php'; ?>
 
         <div class="container">
 
             <?php
-            require '../classes/Usuario.class.php';
+            require_once '../classes/Usuario.class.php';
             $usuario = new Usuario();
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Armazena as mensagens de erro

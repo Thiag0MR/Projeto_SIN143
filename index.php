@@ -8,10 +8,7 @@
         <link rel="stylesheet" href="./css/header.css">
         <script src="https://kit.fontawesome.com/107c433e36.js" crossorigin="anonymous"></script>
     <body>
-        <?php
-            require 'config.php';
-            require "./paginas/header.php";
-        ?>
+        <?php require "./paginas/header.php"; ?>
 
         <div class="conteudo">
             <div id = "SecaoPrincipal">
@@ -110,6 +107,6 @@
             </div>
         </div>
 
-        <?php
-            require "./paginas/footer.php"
-        ?>
+        <?php require "./paginas/footer.php"; ?>
+    </body>
+</html>

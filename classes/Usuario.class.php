@@ -54,6 +54,20 @@ class Usuario {
 
     }
 
+    public static function buscarNomeUsuario($idUsuario) {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT nome FROM Usuario WHERE idUsuario = ?");
+        $sql->bindParam(1, $idUsuario);
+        if ($sql->execute() == true) {
+            if ($sql->rowCount() == 1) {
+                $dado = $sql->fetch();
+                return $dado['nome'];
+            }
+        }
+    }
+
+
     public function setNome ($nome, &$arrayErro) {
         if (preg_match("/^[a-zA-Z ]*$/", $nome)) {
             $this->nome = $this->test_input($nome);

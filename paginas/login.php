@@ -7,14 +7,11 @@
         <link rel="stylesheet" href="../css/header.css">
         <script src="https://kit.fontawesome.com/107c433e36.js" crossorigin="anonymous"></script>
     <body>
-        <?php
-            require '../config.php';
-            require './header.php'
-        ?>
+        <?php require './header.php'; ?>
 
         <div class="container">
             <?php
-            require '../classes/Usuario.class.php';
+            require_once '../classes/Usuario.class.php';
             $usuario = new Usuario();
             if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 // Armazena as mensagens de erro
@@ -25,8 +22,9 @@
                 // Verifica se todos os campos foram preenchidos
                 if (!empty($_POST['email']) && !empty($_POST['senha'])) {
                     if ($usuario->login($_POST['email'], $_POST['senha'])){
+                        // Redirecionamento:
                         echo "
-                            <script type='text/javascript'>window.location.href='../index.php'</script>
+                            <script type='text/javascript'>window.location.href='./anunciosUsuario.php'</script>
                         ";
                     } else {
                         $arrayErro['geral'] = "Email ou senha inválidos";
