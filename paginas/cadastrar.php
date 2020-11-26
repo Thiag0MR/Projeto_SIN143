@@ -6,7 +6,8 @@
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/header.css">
         <script src="https://kit.fontawesome.com/107c433e36.js" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="JavaScript/ValidaFormularioCriarConta.js"></script> 
+        <script src="../JavaScript/ValidaFormularioCriarConta.js"></script>
+    </head>
     <body>
         <?php
             require '../config.php';
@@ -28,7 +29,7 @@
                     "senha" => NULL,
                     "telefone" => NULL
                 );
-
+                
                 // Verifica se todos os campos foram preenchidos
                 if (!empty($_POST['nome']) && !empty($_POST['email']) && !empty($_POST['senha']) && !empty($_POST['telefone'])) {
                     if ($usuario->setNome($_POST['nome'] , $arrayErro) &&
@@ -43,34 +44,35 @@
                 }
             }
             ?>
+            <div class = "pagItem">
+                <h1>Cadastrar</h1>
 
-            <h1>Cadastrar</h1>
+                <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 
-            <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                    <span class="erroGeral"><?php if(isset($arrayErro['geral'])) echo $arrayErro['geral']."<br>"; ?></span>
 
-                <span class="erroGeral"><?php if(isset($arrayErro['geral'])) echo $arrayErro['geral']."<br>"; ?></span>
-
-                <span class="sucesso"><?php if(isset($arrayErro['sucesso'])) echo $arrayErro['sucesso']."<br>"; ?></span>
+                    <span class="sucesso"><?php if(isset($arrayErro['sucesso'])) echo $arrayErro['sucesso']."<br>"; ?></span>
 
 
-                <label for="nome">Nome</label>
-                <input type="text" name="nome" value=""> <br>
-                <span class="erro"> <?php if (isset($arrayErro['nome'])) echo $arrayErro['nome']."<br>"; ?></span>
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" value=""> <br>
+                    <span class="erro"> <?php if (isset($arrayErro['nome'])) echo $arrayErro['nome']."<br>"; ?></span>
 
-                <label for="email">Email</label>
-                <input type="text" name="email" value=""> <br>
-                <span class="erro"> <?php if (isset($arrayErro['email'])) echo $arrayErro['email']."<br>"; ?></span>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" value=""> <br>
+                    <span class="erro"> <?php if (isset($arrayErro['email'])) echo $arrayErro['email']."<br>"; ?></span>
 
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" value=""> <br>
-                <span class="erro"> <?php if (isset($arrayErro['senha'])) echo $arrayErro['senha']."<br>"; ?></span>
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" value=""> <br>
+                    <span class="erro"> <?php if (isset($arrayErro['senha'])) echo $arrayErro['senha']."<br>"; ?></span>
 
-                <label for="telefone">Telefone</label>
-                <input type="text" name="telefone" value=""> <br>
-                <span class="erro"> <?php if (isset($arrayErro['telefone'])) echo $arrayErro['telefone']."<br>"; ?></span>
+                    <label for="telefone">Telefone</label>
+                    <input type="text" name="telefone" value=""> <br>
+                    <span class="erro"> <?php if (isset($arrayErro['telefone'])) echo $arrayErro['telefone']."<br>"; ?></span>
 
-                <input type="submit" name="submit" value="Enviar" onclick="return validar()">
-            </form>
+                    <input type="submit" name="submit" onclick="validar();" value="Enviar" >
+                </form>
+            </div>
         </div>
 
         <?php require './footer.php' ?>

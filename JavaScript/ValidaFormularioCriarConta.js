@@ -11,7 +11,7 @@ function validar() {
     var email1 = 0;
     var senha1 = 0;
     var telefone1 = 0;
-    
+    console.log("AHDHSUASDUASDASDSAHIDIUSADGYASDUYGSADIGSAGDYSAGASDISADSAIUDAAIUASDSAD");
     //Verifica nome, nome1 != 0 -> erro
     for(var i = 0;  i < nome.length; i++){
         if(nome[i] == ' ' || nome[i] == 'a' || nome[i] == 'b' || nome[i] == 'c' ||nome[i] == 'd' || nome[i] == 'e' || nome[i] == 'f' || nome[i] == 'g' ||
@@ -34,7 +34,7 @@ function validar() {
         email[i] == 'x' || email[i] == 'y' || email[i] == 'w' || email[i] == 'z' ||email[i] == 'A' || email[i] == 'B' || email[i] == 'C' ||email[i] == 'D' || email[i] == 'E' || email[i] == 'F' || email[i] == 'G' ||
         email[i] == 'H' || email[i] == 'I' || email[i] == 'J' || email[i] == 'K' ||email[i] == 'L' || email[i] == 'M' || email[i] == 'N' ||email[i] == 'O' ||
         email[i] == 'P' || email[i] == 'Q' || email[i] == 'R' || email[i] == 'S' ||email[i] == 'T' || email[i] == 'U' || email[i] == 'v' ||email[i] == 'V' ||
-        email[i] == 'X' || email[i] == 'Y' || email[i] == 'W' || email[i] == 'Z'){
+        email[i] == 'X' || email[i] == 'Y' || email[i] == 'W' || email[i] == 'Z' || email[i] == '@'){
             
         }else{
             email1++;
