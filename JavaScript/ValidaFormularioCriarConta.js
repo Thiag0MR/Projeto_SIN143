@@ -64,22 +64,22 @@ function validar() {
     }
 
 
-    if (nome1.value != 0){
+    if (nome1 != 0){
         alert("Nome invalido");
         nome.focus();
         return;
     }
-    if (senha1.value != 0){
+    if (senha1 != 0){
         alert("Senha invalida");
         senha.focus();
         return;
     }
-    if (email1.value != 0){
+    if (email1 != 0){
         alert("Email invalido");
         email.focus();
         return;
     }
-    if (telefone1.value != 0){
+    if (telefone1 != 0){
         alert("Telefone invalido");
         telefone.focus();
         return;
