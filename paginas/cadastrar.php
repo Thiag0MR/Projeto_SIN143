@@ -5,6 +5,7 @@
         <title>Cadastrar</title>
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/cadastro.css">
         <script src="https://kit.fontawesome.com/107c433e36.js" crossorigin="anonymous"></script>
         <script type="text/javascript" src="../JavaScript/ValidaFormularioCriarConta.js"></script>
     <body>
@@ -40,8 +41,8 @@
                 }
             }
             ?>
-            <div class = "pagItem">
-                <h1>Cadastrar</h1>
+            <div class = "Cadastro">
+                <h1 id="itens">Cadastrar</h1>
 
                 <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 
@@ -49,24 +50,29 @@
 
                     <span class="sucesso"><?php if(isset($arrayErro['sucesso'])) echo $arrayErro['sucesso']."<br>"; ?></span>
 
-
-                    <label for="nome">Nome</label>
-                    <input id="nome" type="text" name="nome" value=""> <br>
-                    <span class="erro"> <?php if (isset($arrayErro['nome'])) echo $arrayErro['nome']."<br>"; ?></span>
-
-                    <label for="email">Email</label>
-                    <input id="email" type="text" name="email" value=""> <br>
-                    <span class="erro"> <?php if (isset($arrayErro['email'])) echo $arrayErro['email']."<br>"; ?></span>
-
-                    <label for="senha">Senha</label>
-                    <input id="senha" type="password" name="senha" value=""> <br>
-                    <span class="erro"> <?php if (isset($arrayErro['senha'])) echo $arrayErro['senha']."<br>"; ?></span>
-
-                    <label for="telefone">Telefone</label>
-                    <input id="telefone" type="text" name="telefone" value=""> <br>
-                    <span class="erro"> <?php if (isset($arrayErro['telefone'])) echo $arrayErro['telefone']."<br>"; ?></span>
-
-                    <input type="submit" name="submit" onclick="validar();" value="Enviar" >
+                    <div id="itens">
+                        <label for="nome">&nbsp&nbsp&nbspNome</label>
+                        <input id="nome" type="text" name="nome" value=""> <br>
+                        <span class="erro"> <?php if (isset($arrayErro['nome'])) echo $arrayErro['nome']."<br>"; ?></span>
+                    </div>
+                    <div id="itens">
+                        <label for="email">&nbsp&nbsp&nbspEmail</label>
+                        <input id="email" type="text" name="email" value=""> <br>
+                        <span class="erro"> <?php if (isset($arrayErro['email'])) echo $arrayErro['email']."<br>"; ?></span>
+                    </div>
+                    <div id="itens">
+                        <label for="senha">&nbsp&nbspSenha</label>
+                        <input id="senha" type="password" name="senha" value=""> <br>
+                        <span class="erro"> <?php if (isset($arrayErro['senha'])) echo $arrayErro['senha']."<br>"; ?></span>
+                    </div>
+                    <div id="itens">
+                        <label for="telefone">Telefone</label>
+                        <input id="telefone" type="text" name="telefone" value=""> <br>
+                        <span class="erro"> <?php if (isset($arrayErro['telefone'])) echo $arrayErro['telefone']."<br>"; ?></span>
+                    </div>
+                    <div id="botao">
+                    <input class="button button1" type="submit" name="submit" onclick="validar();" value="Enviar" >
+                    </div>
                 </form>
             </div>
         </div>

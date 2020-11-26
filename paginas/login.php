@@ -52,9 +52,9 @@
                         <label for="senha">Senha</label>
                         <input id="senha" type="password" name="senha" value=""> <br>
                     </div>
-                    <div id="itens">
+                    <div id="botao">
                         <span class="erro"> <?php if (isset($arrayErro['senha'])) echo $arrayErro['senha']."<br>"; ?></span>
-                        <input class="button1" type="submit" name="submit" onclick="validar();" value="Enviar">
+                        <input class="button button1" type="submit" name="submit" onclick="validar();" value="Enviar">
                     </div>
                     
                         <span><br> <h4 id="itens">Não tem uma conta ainda?</h4>  <a href="./cadastrar.php"> <br><h4 id="itens">Clique aqui</a> e crie uma</h4></span>

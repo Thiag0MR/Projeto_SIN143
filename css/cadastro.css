@@ -3,7 +3,7 @@
     font-family: Verdana, sans-serif;
     border: solid 2px #ccc;
     box-shadow: 0 7px 40px 0 rgba(0,0,0,0.3);
-    height: 380px;
+    height: 300px;
     width: 400px;
     margin: 5px 20px;
     padding: 5px;
@@ -18,9 +18,10 @@
 
 #itens{
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
+
 #botao{
     text-align: center;
     padding-top: 5px;
