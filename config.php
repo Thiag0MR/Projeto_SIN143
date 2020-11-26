@@ -4,10 +4,10 @@
 
     global $pdo;
 
-    $servername = "localhost";
+    $servername = "localhost:3306";
     $username = "root";
     $password = "123456";
-    $dbname = "temvagaai";
+    $dbname = "temVagaAi";
 
     try {
         $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
