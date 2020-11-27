@@ -6,11 +6,15 @@
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/header.css">
         <link rel="stylesheet" href="../css/cadastro.css">
+        <link rel="stylesheet" href="../css/darkMode.css">
+        <script type="text/javascript" src="../JavaScript/darkMode.js"></script>
         <script src="https://kit.fontawesome.com/107c433e36.js" crossorigin="anonymous"></script>
         <script type="text/javascript" src="../JavaScript/ValidaFormularioCriarConta.js"></script>
     <body>
         <?php require './header.php'; ?>
-
+        <div id="botaoDark">
+            <button class="buttonDark buttonDark1" onclick="myFunction()">Dark Mode</button>
+        </div>
         <div class="container">
 
             <?php
