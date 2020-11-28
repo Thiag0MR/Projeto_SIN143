@@ -5,7 +5,7 @@ class Usuario {
     private $senha;
     private $telefone;
 
-    public function cadastrar (&$arrayErro) {
+    public function cadastrarUsuario (&$arrayErro) {
         global $pdo;
         $sql = $pdo->prepare("SELECT idUsuario FROM Usuario WHERE email = ?");
         $sql->bindParam(1, $this->email);

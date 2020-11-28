@@ -1,0 +1,33 @@
+.conteudo-principal {
+    min-height: 64vh;
+    margin: 0 auto;
+    width: 96%;
+}
+
+.table-anuncios, .table-anuncios th, .table-anuncios td {
+    /* border: 1px solid black; */
+    border-collapse: collapse;
+    text-align: center;
+    padding: 10px;
+}
+
+.table-anuncios {
+    width: 100%;
+}
+
+.table-add-anuncio td:last-child {
+    padding-left: 20px;
+}
+
+.table-anuncios tr:hover {
+    background-color: #f5f5f5;
+}
+
+.table-anuncios th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.table-anuncios tr:nth-child(odd){
+    background-color: #f2f2f2;
+}

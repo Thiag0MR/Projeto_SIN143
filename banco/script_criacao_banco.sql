@@ -36,11 +36,11 @@ ALTER TABLE Anuncio
 	ADD FOREIGN KEY (Usuario_idUsuario) REFERENCES Usuario(idUsuario);
 
 ALTER TABLE Anuncio_Categoria
-	ADD FOREIGN KEY (Anuncio_idAnuncio) REFERENCES Anuncio(idAnuncio),
-    ADD FOREIGN KEY (Categoria_idCategoria) REFERENCES Categoria(idCategoria);
+	ADD FOREIGN KEY (Anuncio_idAnuncio) REFERENCES Anuncio(idAnuncio) ON DELETE CASCADE,
+    ADD FOREIGN KEY (Categoria_idCategoria) REFERENCES Categoria(idCategoria) ON DELETE CASCADE;
 
 ALTER TABLE Imagem
-	ADD FOREIGN KEY (Anuncio_idAnuncio) REFERENCES Anuncio(idAnuncio);
+	ADD FOREIGN KEY (Anuncio_idAnuncio) REFERENCES Anuncio(idAnuncio) ON DELETE CASCADE;
 
 -- DROP TABLE Anuncio_Categoria;
 -- DROP TABLE Anuncio;

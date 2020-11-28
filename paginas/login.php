@@ -15,7 +15,7 @@
             $usuario = new Usuario();
             if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 // Armazena as mensagens de erro
-                $arrayErro = Array(
+                $arrayErro = array(
                     "geral" => NULL,
                 );
 

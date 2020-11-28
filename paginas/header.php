@@ -20,8 +20,20 @@ require $serverDocRoot.__ROOT__.'/config.php';
             $usuario = new Usuario();
             $nomeUsuario = $usuario->buscarNomeUsuario($_SESSION['login']);
             ?>
-            <li><span><i class="fas fa-user" style="margin-right:10px;"></i><?php echo $nomeUsuario ?></span></li>
-            <li><a href="<?php echo __ROOT__."/paginas/sair.php" ?>">Sair</a></li>
+            <div class="dropdown">
+                <li>
+
+
+                    <button onclick="myFunction()" class="dropbtn">
+                        <span><i class="fas fa-user" style="margin-right:10px;"></i><?php echo $nomeUsuario ?></span>
+                    </button>
+                </li>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="<?php echo __ROOT__."/paginas/anunciosUsuario.php" ?>">Meus anúncios</a>
+                    <a href="<?php echo __ROOT__."/paginas/sair.php" ?>">Sair</a>
+                </div>
+            </div>
+
         </ul>
     <?php else: ?>
         <ul>

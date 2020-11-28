@@ -17,7 +17,7 @@
             $usuario = new Usuario();
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Armazena as mensagens de erro
-                $arrayErro = Array(
+                $arrayErro = array(
                     "geral" => NULL,
                     "sucesso" => NULL,
                     "nome" => NULL,
@@ -33,7 +33,7 @@
                         $usuario->setSenha($_POST['senha'] , $arrayErro) &&
                         $usuario->setTelefone($_POST['telefone'] , $arrayErro)) {
 
-                        $usuario->cadastrar($arrayErro);
+                        $usuario->cadastrarUsuario($arrayErro);
                     }
                 } else {
                     $arrayErro['geral'] = "Todos os campos são requeridos!";

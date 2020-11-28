@@ -33,3 +33,5 @@
         <h6>Copyright © 2020. Todos os direitos reservados.</h6>
     </div>
 </div>
+
+<?php $pdo = NULL ?>
