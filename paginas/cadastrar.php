@@ -12,9 +12,9 @@
         <script type="text/javascript" src="../JavaScript/ValidaFormularioCriarConta.js"></script>
     <body>
         <?php require './header.php'; ?>
-        <div id="botaoDark">
+        <!-- <div id="botaoDark">
             <button class="buttonDark buttonDark1" onclick="myFunction()">Dark Mode</button>
-        </div>
+        </div> -->
         <div class="container">
 
             <?php
@@ -30,7 +30,7 @@
                     "senha" => NULL,
                     "telefone" => NULL
                 );
-                
+
                 // Verifica se todos os campos foram preenchidos
                 if (!empty($_POST['nome']) && !empty($_POST['email']) && !empty($_POST['senha']) && !empty($_POST['telefone'])) {
                     if ($usuario->setNome($_POST['nome'] , $arrayErro) &&

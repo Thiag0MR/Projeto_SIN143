@@ -16,9 +16,6 @@
             <div id = "SecaoPrincipal">
                 <div id = "ImagemPrincipal">
                     <div id = "ConteudoImagem">
-                        <div id="botaoDark">
-                            <button class="buttonDark buttonDark1" onclick="myFunction()">Dark Mode</button>
-                        </div>
                         <h1>Bem vindo ao Tem Vaga Aí ?</h1>
                         <h3>As melhores vagas em um só lugar !</h3>
                         <div id="divBusca">
@@ -34,7 +31,7 @@
                     </div>
                 </div>
               </div>
-                
+
 
             <section id="SecaoCategorias">
                 <div class="container">

@@ -13,8 +13,15 @@ require $serverDocRoot.__ROOT__.'/config.php';
             </a>
         </div>
     </div>
-    <?php if (isset($_SESSION["login"]) && !empty($_SESSION["login"])): ?>
         <ul>
+            <li>
+                <div id="botaoDark">
+                    <button class="buttonDark buttonDark1" onclick="myFunction()">Dark Mode</button>
+                </div>
+            </li>
+
+    <?php if (isset($_SESSION["login"]) && !empty($_SESSION["login"])): ?>
+
             <?php
             require_once $serverDocRoot.__ROOT__.'/classes/Usuario.class.php';
             $usuario = new Usuario();
@@ -36,7 +43,7 @@ require $serverDocRoot.__ROOT__.'/config.php';
 
         </ul>
     <?php else: ?>
-        <ul>
+
             <li>
                 <a class="entrar" href="<?php echo __ROOT__."/paginas/login.php"?>"><i class="fas fa-sign-in-alt" style="margin-right:10px;"></i></i></i>Entrar</a>
             </li>

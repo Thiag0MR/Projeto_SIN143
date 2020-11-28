@@ -12,9 +12,9 @@
         <script type="text/javascript" src="../JavaScript/ValidaLogin.js"></script>
     <body>
         <?php require './header.php'; ?>
-        <div id="botaoDark">
+        <!-- <div id="botaoDark">
             <button class="buttonDark buttonDark1" onclick="myFunction()">Dark Mode</button>
-        </div>
+        </div> -->
         <div class="container">
             <?php
             require_once '../classes/Usuario.class.php';
@@ -60,10 +60,10 @@
                         <span class="erro"> <?php if (isset($arrayErro['senha'])) echo $arrayErro['senha']."<br>"; ?></span>
                         <input class="button button1" type="submit" name="submit" onclick="validar();" value="Enviar">
                     </div>
-                    
+
                         <span><br> <h4 id="itens">Não tem uma conta ainda?</h4>  <a href="./cadastrar.php"> <br><h4 id="itens">Clique aqui</a> e crie uma</h4></span>
-                    
-                    
+
+
                 </form>
             </div>
         </div>
