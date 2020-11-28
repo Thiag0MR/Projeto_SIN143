@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/header.css">
         <link rel="stylesheet" href="../css/anunciosUsuario.css">
+        <link rel="stylesheet" href="../css/darkMode.css">
+        <script type="text/javascript" src="../JavaScript/darkMode.js"></script>
         <script src="https://kit.fontawesome.com/107c433e36.js" crossorigin="anonymous"></script>
     </head>
     <body>
