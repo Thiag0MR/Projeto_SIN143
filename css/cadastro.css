@@ -1,0 +1,40 @@
+.Cadastro{
+    align-items: center;
+    font-family: Verdana, sans-serif;
+    border: solid 2px #ccc;
+    box-shadow: 0 7px 40px 0 rgba(0,0,0,0.3);
+    height: 300px;
+    width: 400px;
+    margin: 5px 20px;
+    padding: 5px;
+}
+.container {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+#itens{
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+#botao{
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 2px;
+}
+
+.button {
+    background-color: #5ac761;
+    border: none;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+.button1 {padding: 10px 24px;}

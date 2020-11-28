@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="./css/index.css">
         <link rel="stylesheet" href="./css/footer.css">
         <link rel="stylesheet" href="./css/header.css">
+        <link rel="stylesheet" href="./css/darkMode.css">
+        <script type="text/javascript" src="./JavaScript/darkMode.js"></script>
         <script src="https://kit.fontawesome.com/107c433e36.js" crossorigin="anonymous"></script>
     <body>
         <?php require "./paginas/header.php"; ?>
@@ -14,6 +16,9 @@
             <div id = "SecaoPrincipal">
                 <div id = "ImagemPrincipal">
                     <div id = "ConteudoImagem">
+                        <div id="botaoDark">
+                            <button class="buttonDark buttonDark1" onclick="myFunction()">Dark Mode</button>
+                        </div>
                         <h1>Bem vindo ao Tem Vaga Aí ?</h1>
                         <h3>As melhores vagas em um só lugar !</h3>
                         <div id="divBusca">
@@ -29,7 +34,7 @@
                     </div>
                 </div>
               </div>
-
+                
 
             <section id="SecaoCategorias">
                 <div class="container">
