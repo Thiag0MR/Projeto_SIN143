@@ -28,9 +28,9 @@ CREATE TABLE IF NOT EXISTS Anuncio_Categoria (
 
 CREATE TABLE IF NOT EXISTS Imagem (
     idImagem INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    url VARCHAR(45),
+    url VARCHAR(90),
     Anuncio_idAnuncio INT
-)
+);
 
 ALTER TABLE Anuncio
 	ADD FOREIGN KEY (Usuario_idUsuario) REFERENCES Usuario(idUsuario);

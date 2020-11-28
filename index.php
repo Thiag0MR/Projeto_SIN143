@@ -19,12 +19,12 @@
                         <h1>Bem vindo ao Tem Vaga Aí ?</h1>
                         <h3>As melhores vagas em um só lugar !</h3>
                         <div id="divBusca">
-                          <form action="/action_page.php">
+                          <form method="GET" action="<?php echo __ROOT__.'/paginas/resultadoBusca.php'; ?>">
                             <div id="txtBusca">
-                                <input type="text" placeholder="Buscar..."/>
+                                <input type="text" name="buscar" placeholder="Buscar..."/>
                             </div>
                             <div id="Pesquisar">
-                                <input type="submit" value="Pesquisar">
+                                <input type="submit" name="" value="Pesquisar">
                             </div>
                           </form>
                         </div>

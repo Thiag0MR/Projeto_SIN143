@@ -1,3 +1,9 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+// var_dump(php_ini_loaded_file(), php_ini_scanned_files());
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -6,6 +12,7 @@
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/header.css">
         <link rel="stylesheet" href="../css/anunciosUsuario.css">
+        <link rel="stylesheet" href="../css/darkMode.css">
         <script src="https://kit.fontawesome.com/107c433e36.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -17,8 +24,11 @@
             <?php
             require '../classes/Anuncio.class.php';
             require '../classes/Categoria.class.php';
+
             $c = new Categoria();
             $a = new Anuncio();
+
+            $pastaImagens = "../imagens/anuncios/";
 
             $valoresAnuncio = array(
                 $titulo = NULL,
@@ -230,19 +240,20 @@
                                     ?>
                                 </td>
                                 <td style="width:5%">R$ <?php echo $anuncio['valor'] ?></td>
-                                <div class="imagens">
-                                <?php
-                                    $imagens = $a->getImagensPorAnuncio($anuncio['idAnuncio']);
-                                    // Se estiver associado a alguma imagem
-                                    if (isset($imagens) && !empty($imagens)) {
-                                        foreach ($imagens as $imagem) {
-                                            echo '<td> <img src="../imagens/anuncios/'.$imagem['url'].'" alt=""></td>';
-                                            // <td> <img src="http://dummyimage.com/68x68/000/fff" alt=""> </td>
-                                        }
-                                    }
-                                ?>
-                                </div>
-                                <td></td>
+                                <td style="width:33%">
+                                    <div class="imagens">
+                                        <?php
+                                            $imagens = $a->getImagensPorAnuncio($anuncio['idAnuncio']);
+                                            // Se estiver associado a alguma imagem
+                                            if (isset($imagens) && !empty($imagens)) {
+                                                foreach ($imagens as $imagem) {
+                                                    echo '<img src="'.$pastaImagens.$imagem['url'].'" alt="">';
+                                                    // <td> <img src="http://dummyimage.com/68x68/000/fff" alt=""> </td>
+                                                }
+                                            }
+                                        ?>
+                                    </div>
+                                </td>
                                 <td style="width:5%">
                                     <a title="Atualizar" href="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."?mode=update&ID=".$anuncio['idAnuncio'];?>"><i class="fas fa-edit fa-xs" style="color:green"></i></a>
                                     <a title="Deletar" href="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."?mode=exclude&ID=".$anuncio['idAnuncio'];?>"><i class="fas fa-minus-circle fa-xs" style="color:red"></i></a>

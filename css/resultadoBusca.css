@@ -1,0 +1,64 @@
+.conteudoPrincipal {
+    min-height: 64vh;
+    margin: 0 auto;
+    width: 80%;
+    padding-top: 25px;
+}
+
+.conteudoPrincipal > div:last-child {
+    width: 100%;
+}
+
+.buscaAvancada {
+    display: flex;
+    width: 96%;
+    height: 50px;
+    justify-content: center;
+}
+
+.refinarBusca {
+    display: inline-block;
+    width: 25.5%;
+    float: left;
+}
+
+
+.resultadoAnuncios {
+    width: 65%;
+    display: inline-block;
+    float: left;
+}
+
+.categorias {
+    padding-top: 20px;
+}
+
+.anuncio {
+    width: 100%;
+    height: 250px;
+    margin: 20px 0;
+    background-color: #EEE;
+    border: 1px solid #EEE;
+    border-radius: 2px;
+}
+
+.anuncio .imagem {
+    display: inline-block;
+    width: 250px;
+    height: 100%;
+    overflow: hidden;
+}
+.anuncio .imagem img {
+    width: 250px;
+    height: 100%;
+}
+
+.anuncio .info {
+    display: inline-block;
+    width: calc(100% - 250px);
+    float: right;
+    height: 100%;
+}
+.anuncio .info span {
+    display: block;
+}
