@@ -2,11 +2,15 @@
 <html>
     <head>
         <title>Quem somos?</title>
-        <link rel="stylesheet" href="./rodape.css">
+        <link rel="stylesheet" href="../../css/footer.css">
+        <link rel="stylesheet" href="../../css/header.css">
     </head>
 
 
     <body id="body">
+
+        <?php require '../header.php'; ?>
+
         <div >
             <div id="titulo">Quem somos?</div>
             <div id="buttonHome">
@@ -27,7 +31,7 @@
 
         </div>
 
-
+    <?php require '../footer.php' ?>
 
     </body>
 </html>

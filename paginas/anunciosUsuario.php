@@ -1,9 +1,3 @@
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-// var_dump(php_ini_loaded_file(), php_ini_scanned_files());
- ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -13,6 +7,7 @@ error_reporting(E_ALL);
         <link rel="stylesheet" href="../css/header.css">
         <link rel="stylesheet" href="../css/anunciosUsuario.css">
         <link rel="stylesheet" href="../css/darkMode.css">
+        <script type="text/javascript" src="../JavaScript/darkMode.js"></script>
         <script src="https://kit.fontawesome.com/107c433e36.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -107,7 +102,6 @@ error_reporting(E_ALL);
                     }
                     if (isset($_FILES['imagens']) && !empty($_FILES['imagens']) && $_FILES['imagens']['error'][0] == 0) {
                         $a->setImagens($_FILES['imagens']);
-                        echo print_r($_FILES['imagens']);
                     }
 
 
@@ -131,9 +125,9 @@ error_reporting(E_ALL);
                         } else {
 
                             if($a->cadastrarAnuncio($_SESSION['login'], $arrayErro)) {
-                                // $arrayErro['sucesso'] = "Anúncio cadastrado com sucesso!";
+                                $arrayErro['sucesso'] = "Anúncio cadastrado com sucesso!";
                             }else {
-                                // $arrayErro['falha'] = "Falha ao cadastrar anúncio!";
+                                $arrayErro['falha'] = "Falha ao cadastrar anúncio!";
                             }
                         }
                     }

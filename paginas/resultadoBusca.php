@@ -28,6 +28,9 @@
                     <div class="categorias">
                         <h4>Categorias</h4>
                         <?php
+
+                        $pastaImagens = __ROOT__.'/imagens/anuncios/';
+
                         require '../classes/Categoria.class.php';
                         $c = new Categoria();
                         $categorias = $c->getNomeDasCategorias();
@@ -52,9 +55,10 @@
                     if (isset($_GET)) :
                         if (isset($_GET['categoria']) && count($_GET['categoria']) != 0) {
                             $resultadoBusca = $a->getAnunciosPorCategoria($_GET['categoria'], $_GET['buscar']);
-
                         } else {
-                            $resultadoBusca = $a->getAnuncios($_GET['buscar']);
+                            if (!empty($_GET['buscar'])) {
+                                $resultadoBusca = $a->getAnuncios($_GET['buscar']);
+                            }
                         }
 
                         if (isset($resultadoBusca) && !empty($resultadoBusca)):
@@ -66,7 +70,7 @@
                                         $imagens = $a->getImagensPorAnuncio($anuncio['idAnuncio']);
                                         if (isset($imagens) && !empty($imagens)) {
                                             foreach ($imagens as $img) {
-                                                echo "<img src='".$img['url']."' alt=''>";
+                                                echo "<img src='".$pastaImagens.$img['url']."' alt=''>";
                                             }
                                         }
                                         ?>
@@ -75,7 +79,7 @@
                                         <span class="titulo"><?php echo $anuncio['titulo'] ?></span>
                                         <span class="descricao"><?php echo $anuncio['descricao'] ?></span>
                                         <span class="valor"><?php echo "R$ ".$anuncio['valor'] ?></span>
-                                        <span class="detalhes"><a href="<?php echo __ROOT__."/paginas/detalhesAnuncios.php" ?>">Detalhes</a></span>
+                                        <span class="detalhes"><a href="<?php echo __ROOT__."/paginas/detalhesAnuncios.php?idAnuncio=".$anuncio['idAnuncio'] ?>">Detalhes</a></span>
                                     </div>
                                 </div>
                             <?php

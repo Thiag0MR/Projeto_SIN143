@@ -11,7 +11,7 @@
     bottom: 0px;
     left: 0px;
     right: 0px;
-    background-image: url(../images/ImagemPrincipal.png);
+    background-image: url(../imagens/ImagemPrincipal.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -178,7 +178,7 @@
 }
 
 #SecaoCategorias .item:hover{
-    background-color: #90bf5a;
+    background-color: #5ac761;
     transform: scale(1.1);
 }
 

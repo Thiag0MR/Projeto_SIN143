@@ -16,6 +16,8 @@ class Anuncio {
         $sql->bindParam(3, $this->valor);
         $sql->bindParam(4, $idUsuario);
 
+
+
         if ($sql->execute() == true) {
 
             $lastIdAnuncio = $pdo->lastInsertId();
@@ -32,7 +34,7 @@ class Anuncio {
 
                     // DIRETORIO ONDE SERÁ ARMAZENADO AS IMAGENS
                     // $uploaddir = '/var/www/uploads/';
-                    $uploaddir = '/opt/lampp/htdocs/Projeto_SIN143/images/anuncios/';
+                    $uploaddir = '/opt/lampp/htdocs/Projeto_SIN143/imagens/anuncios/';
 
                     $uploadfile = $uploaddir. $filename;
                     $tmpfile = $this->imagens["tmp_name"][$i];
@@ -51,10 +53,30 @@ class Anuncio {
                 }
             }
 
+            $this->cadastrarCategoria_Anuncio($lastIdAnuncio);
+
             return true;
         }
 
         return false;
+    }
+
+    public function cadastrarCategoria_Anuncio($idAnuncio) {
+        global $pdo;
+
+        $c = new Categoria();
+
+        foreach ($this->nomeDasCategorias as $cat) {
+            $idCategoria = $c->getIdDaCategoriaPeloNome($cat);
+            $sql = $pdo->prepare ("INSERT INTO Anuncio_Categoria (Anuncio_idAnuncio, Categoria_idCategoria) VALUES (?,?)");
+            $sql->bindParam(1, $idAnuncio);
+            $sql->bindParam(2, $idCategoria['idCategoria']);
+            if ($sql->execute() == false) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public function updateAnuncio($idAnuncio) {
@@ -148,7 +170,7 @@ class Anuncio {
 
         $termo = $this->test_input($termo);
 
-        $sql = $pdo->prepare("SELECT * FROM Anuncio WHERE titulo LIKE BINARY ? OR descricao LIKE BINARY ?");
+        $sql = $pdo->prepare("SELECT * FROM Anuncio WHERE titulo LIKE LOWER (?) OR descricao LIKE LOWER (?)");
         $termoBuscar = '%'.$termo.'%';
         $sql->bindParam(1, $termoBuscar);
         $sql->bindParam(2, $termoBuscar);
@@ -186,7 +208,7 @@ class Anuncio {
                 a.idAnuncio = ac.Anuncio_idAnuncio
                 JOIN Categoria AS c ON ac.Categoria_idCategoria = c.idCategoria
                 WHERE FIND_IN_SET(c.nome, :array)) AS T
-                WHERE titulo LIKE BINARY :termo OR descricao LIKE BINARY :termo
+                WHERE titulo LIKE LOWER (:termo)  OR descricao LIKE LOWER (:termo)
             ");
 
             $sql->bindParam('array', $novoArrayCategorias);

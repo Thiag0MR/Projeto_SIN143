@@ -62,24 +62,24 @@ body {
 }
 
 #cabecalho li .entrar:hover {
-    color: #90bf5a;
+    color: #5ac761;
 }
 
 /* Botão Anunciar Vaga */
 #cabecalho ul .btnAnunciarVaga {
-    border: 2px solid #90bf5a;
+    border: 2px solid #5ac761;
     border-radius: 5px;
     padding: 10px 10px;
-    color: #90bf5a;
+    color: #5ac761;
     font-weight: bold;
 }
 
 /* Botão Anunciar Vaga */
 #cabecalho ul .btnAnunciarVaga:hover {
-    border: 2px solid #90bf5a;
+    border: 2px solid #5ac761;
     border-radius: 5px;
     padding: 10px 10px;
-    background-color: #90bf5a;
+    background-color: #5ac761;
     color: white;
 }
 

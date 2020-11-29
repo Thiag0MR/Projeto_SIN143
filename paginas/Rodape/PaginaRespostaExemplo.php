@@ -2,11 +2,16 @@
 <html>
     <head>
         <title>Duvidas</title>
-        <link rel="stylesheet" href="./rodape.css">
+        <link rel="stylesheet" href="../../css/footer.css">
+        <link rel="stylesheet" href="../../css/header.css">
     </head>
 
 
     <body id="body">
+
+        <?php require '../header.php'; ?>
+
+
         <div id="titulo">Solução Do Problema:</div>
         <div id="Solucao">
             <p>Sed euismod varius eros id bibendum. Sed sit amet cursus velit, ut interdum lacus. Nullam nec porta nisi, sed bibendum lectus. Donec non convallis ligula, ac rutrum leo. Duis vulputate dignissim ipsum ac finibus. Curabitur posuere eros libero, sit amet fringilla mauris congue quis. Ut condimentum feugiat semper. Suspendisse fringilla facilisis nulla ac sollicitudin. Curabitur tellus massa, finibus quis felis et, tincidunt aliquet felis. Praesent sit amet elit mauris.</p>
@@ -19,11 +24,11 @@
             <a href="./Duvidas.html"><button class="button button1">Mais Dúvidas</button></a>
             </div>
             <div id="buttonHome">
-            <a href="../../index.html"><button class="button button1">HomePage</button></a>
+            <a href="../../index.php"><button class="button button1">HomePage</button></a>
             </div>
         </div>
 
-
+    <?php require '../footer.php' ?>
 
     </body>
 

@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS Imagem (
 );
 
 ALTER TABLE Anuncio
-	ADD FOREIGN KEY (Usuario_idUsuario) REFERENCES Usuario(idUsuario);
+	ADD FOREIGN KEY (Usuario_idUsuario) REFERENCES Usuario(idUsuario) ON DELETE CASCADE;
 
 ALTER TABLE Anuncio_Categoria
 	ADD FOREIGN KEY (Anuncio_idAnuncio) REFERENCES Anuncio(idAnuncio) ON DELETE CASCADE,
@@ -41,8 +41,3 @@ ALTER TABLE Anuncio_Categoria
 
 ALTER TABLE Imagem
 	ADD FOREIGN KEY (Anuncio_idAnuncio) REFERENCES Anuncio(idAnuncio) ON DELETE CASCADE;
-
--- DROP TABLE Anuncio_Categoria;
--- DROP TABLE Anuncio;
--- DROP TABLE Categoria;
--- DROP TABLE Usuario;

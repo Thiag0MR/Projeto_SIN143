@@ -2,12 +2,17 @@
 <html>
     <head>
         <title>Duvidas</title>
-        <link rel="stylesheet" href="./rodape.css">
+        <link rel="stylesheet" href="../../css/footer.css">
+        <link rel="stylesheet" href="../../css/header.css">
     </head>
-    <body id="body">
+    <body>
+
+        <?php require '../header.php'; ?>
+
+
         <div id="titulo">Dúvidas frequentes</div>
         <div id="buttonHome">
-            <a href="../../index.html"><button class="button button1">HomePage</button></a>
+            <a href="../../index.php"><button class="button button1">HomePage</button></a>
         </div>
 
         <ul>
@@ -42,6 +47,7 @@
             </p>
         </div>
 
+    <?php require '../footer.php' ?>
 
     </body>
 </html>
