@@ -4,6 +4,9 @@
     <title>Política de privacidade</title>
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/darkMode.css">
+    <script type="text/javascript" src="../../JavaScript/darkMode.js"></script>
+    <script src="https://kit.fontawesome.com/107c433e36.js" crossorigin="anonymous"></script>
     <head>
         <style>
 
@@ -14,8 +17,6 @@
 
         <?php require '../header.php'; ?>
 
-
-        <div id="titulo">Política de Privacidade</div>
         <h1 >Politica de Dados</h1>
         <hr id="hrTam" font color = "White">
         <br>
@@ -43,11 +44,6 @@
 
             Vivamus gravida augue massa, non efficitur nisi fringilla vel. Pellentesque vitae commodo enim, a porttitor lorem. Phasellus quis euismod felis. Fusce in sapien a arcu lacinia porttitor vitae non arcu. Phasellus nunc massa, posuere elementum laoreet eget, euismod sed risus. Cras ultrices, erat id congue faucibus, lorem felis gravida mauris, sed pharetra felis metus et enim. Fusce tristique mauris eget convallis viverra. Cras finibus dapibus lacinia. Fusce consectetur odio ac mauris sollicitudin volutpat. Suspendisse ornare, mi id gravida ultricies, justo nunc facilisis odio, nec lobortis nisi sem vel ipsum. Morbi semper ullamcorper varius. Aenean iaculis iaculis lectus, sit amet vulputate velit venenatis egestas. Maecenas vel ultricies dolor, in efficitur felis.
         </p>
-        <div>
-            <div id="buttonHome">
-            <a href="../../index.php"><button class="button button1">HomePage</button></a>
-            </div>
-        </div>
 
         <?php require '../footer.php' ?>
 
