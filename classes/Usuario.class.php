@@ -5,6 +5,23 @@ class Usuario {
     private $senha;
     private $telefone;
 
+    public function getUsuario($idUsuario) {
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT * FROM Usuario WHERE idUsuario = ? LIMIT 1");
+        $sql->bindParam(1, $idUsuario);
+
+        $array = NULL;
+
+        if ($sql->execute() == true) {
+            if ($sql->rowCount() == 1) {
+                $array = $sql->fetch();
+                return $array;
+            }
+        }
+        return false;
+    }
+
     public function cadastrarUsuario (&$arrayErro) {
         global $pdo;
         $sql = $pdo->prepare("SELECT idUsuario FROM Usuario WHERE email = ?");
@@ -90,7 +107,7 @@ class Usuario {
     }
 
     public function setSenha($senha, &$arrayErro) {
-        if (strlen($senha) > 6) {
+        if (strlen($senha) >= 6) {
             $this->senha = $this->test_input($senha);
         } else {
             $arrayErro['senha'] = "A senha deve ter no mínimo 6 caracteres!";

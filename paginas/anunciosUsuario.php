@@ -19,8 +19,11 @@
             <?php
             require '../classes/Anuncio.class.php';
             require '../classes/Categoria.class.php';
+
             $c = new Categoria();
             $a = new Anuncio();
+
+            $pastaImagens = "../imagens/anuncios/";
 
             $valoresAnuncio = array(
                 $titulo = NULL,
@@ -99,7 +102,6 @@
                     }
                     if (isset($_FILES['imagens']) && !empty($_FILES['imagens']) && $_FILES['imagens']['error'][0] == 0) {
                         $a->setImagens($_FILES['imagens']);
-                        echo print_r($_FILES['imagens']);
                     }
 
 
@@ -123,9 +125,9 @@
                         } else {
 
                             if($a->cadastrarAnuncio($_SESSION['login'], $arrayErro)) {
-                                // $arrayErro['sucesso'] = "Anúncio cadastrado com sucesso!";
+                                $arrayErro['sucesso'] = "Anúncio cadastrado com sucesso!";
                             }else {
-                                // $arrayErro['falha'] = "Falha ao cadastrar anúncio!";
+                                $arrayErro['falha'] = "Falha ao cadastrar anúncio!";
                             }
                         }
                     }
@@ -232,19 +234,20 @@
                                     ?>
                                 </td>
                                 <td style="width:5%">R$ <?php echo $anuncio['valor'] ?></td>
-                                <div class="imagens">
-                                <?php
-                                    $imagens = $a->getImagensPorAnuncio($anuncio['idAnuncio']);
-                                    // Se estiver associado a alguma imagem
-                                    if (isset($imagens) && !empty($imagens)) {
-                                        foreach ($imagens as $imagem) {
-                                            echo '<td> <img src="../imagens/anuncios/'.$imagem['url'].'" alt=""></td>';
-                                            // <td> <img src="http://dummyimage.com/68x68/000/fff" alt=""> </td>
-                                        }
-                                    }
-                                ?>
-                                </div>
-                                <td></td>
+                                <td style="width:33%">
+                                    <div class="imagens">
+                                        <?php
+                                            $imagens = $a->getImagensPorAnuncio($anuncio['idAnuncio']);
+                                            // Se estiver associado a alguma imagem
+                                            if (isset($imagens) && !empty($imagens)) {
+                                                foreach ($imagens as $imagem) {
+                                                    echo '<img src="'.$pastaImagens.$imagem['url'].'" alt="">';
+                                                    // <td> <img src="http://dummyimage.com/68x68/000/fff" alt=""> </td>
+                                                }
+                                            }
+                                        ?>
+                                    </div>
+                                </td>
                                 <td style="width:5%">
                                     <a title="Atualizar" href="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."?mode=update&ID=".$anuncio['idAnuncio'];?>"><i class="fas fa-edit fa-xs" style="color:green"></i></a>
                                     <a title="Deletar" href="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."?mode=exclude&ID=".$anuncio['idAnuncio'];?>"><i class="fas fa-minus-circle fa-xs" style="color:red"></i></a>

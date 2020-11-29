@@ -31,3 +31,15 @@
 .table-anuncios tr:nth-child(odd){
     background-color: #f2f2f2;
 }
+
+.imagens {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.imagens img {
+    width: 60px;
+    height: 60px;
+}

@@ -6,8 +6,8 @@ class Anuncio {
     private $nomeDasCategorias;
     private $imagens;
 
+    public function cadastrarAnuncio($idUsuario) {
 
-    public function cadastrarAnuncio($idUsuario, &$arrayErro) {
         global $pdo;
 
         $sql = $pdo->prepare ("INSERT INTO Anuncio (titulo, descricao, valor, Usuario_idUsuario) VALUES (?,?,?,?)");
@@ -16,6 +16,8 @@ class Anuncio {
         $sql->bindParam(3, $this->valor);
         $sql->bindParam(4, $idUsuario);
 
+
+
         if ($sql->execute() == true) {
 
             $lastIdAnuncio = $pdo->lastInsertId();
@@ -23,34 +25,58 @@ class Anuncio {
             if (isset($this->imagens) && !empty($this->imagens)) {
                 for ($i = 0; $i < count($this->imagens['name']); $i++) {
 
-
                     $filename = $this->imagens["name"][$i];
-                    if ($i > 1) {
-                        $arrayErro['falha'] = $filename;
-                    }
 
-                    // $arrayErro['falha'] = $filename;
+                    $ext = pathinfo($filename, PATHINFO_EXTENSION);
+
+                    // $filename = md5(basename($filename)).".".$ext;
+
+
                     // DIRETORIO ONDE SERÁ ARMAZENADO AS IMAGENS
-                    $uploaddir = '/var/www/uploads/';
-                    $uploadfile = $uploaddir. basename($filename);
+                    // $uploaddir = '/var/www/uploads/';
+                    $uploaddir = '/opt/lampp/htdocs/Projeto_SIN143/imagens/anuncios/';
 
-                    move_uploaded_file($this->imagens["tmp_name"][$i], $uploadfile);
+                    $uploadfile = $uploaddir. $filename;
+                    $tmpfile = $this->imagens["tmp_name"][$i];
+
+                    move_uploaded_file($tmpfile, $uploadfile);
 
                     $sql = $pdo->prepare ("INSERT INTO Imagem (url, Anuncio_idAnuncio) VALUES (?,?)");
 
                     $sql->bindParam(1, $filename);
                     $sql->bindParam(2, $lastIdAnuncio);
-                    if ($sql->execute() == false) {
-                        $arrayErro['falha'] = $filename;
+                    $resultado = $sql->execute();
+
+                    if ($resultado == false) {
                         return false;
                     }
                 }
             }
+
+            $this->cadastrarCategoria_Anuncio($lastIdAnuncio);
+
             return true;
         }
 
-
         return false;
+    }
+
+    public function cadastrarCategoria_Anuncio($idAnuncio) {
+        global $pdo;
+
+        $c = new Categoria();
+
+        foreach ($this->nomeDasCategorias as $cat) {
+            $idCategoria = $c->getIdDaCategoriaPeloNome($cat);
+            $sql = $pdo->prepare ("INSERT INTO Anuncio_Categoria (Anuncio_idAnuncio, Categoria_idCategoria) VALUES (?,?)");
+            $sql->bindParam(1, $idAnuncio);
+            $sql->bindParam(2, $idCategoria['idCategoria']);
+            if ($sql->execute() == false) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public function updateAnuncio($idAnuncio) {
@@ -139,6 +165,78 @@ class Anuncio {
         return $array;
     }
 
+    public function getAnuncios ($termo) {
+        global $pdo;
+
+        $termo = $this->test_input($termo);
+
+        $sql = $pdo->prepare("SELECT * FROM Anuncio WHERE titulo LIKE LOWER (?) OR descricao LIKE LOWER (?)");
+        $termoBuscar = '%'.$termo.'%';
+        $sql->bindParam(1, $termoBuscar);
+        $sql->bindParam(2, $termoBuscar);
+
+        $array = NULL;
+
+        if ($sql->execute() == true) {
+            if ($sql->rowCount() > 0) {
+                $array = $sql->fetchAll();
+            }
+        }
+
+        return $array;
+    }
+
+    public function getAnunciosPorCategoria($arrayCategorias, $termo) {
+        global $pdo;
+
+        $categorias = array();
+        if (count($arrayCategorias) > 0) {
+            foreach ($arrayCategorias as $c) {
+                $tmp = $this->test_input($c);
+                $categorias[$tmp] = $tmp;
+            }
+        }
+
+        $novoArrayCategorias = implode(',', $categorias);
+
+        if (!empty($termo)) {
+
+            $termo = $this->test_input($termo);
+            $termo = '%'.$termo.'%';
+            $sql = $pdo->prepare("
+                SELECT DISTINCT idAnuncio, titulo, descricao, valor FROM (SELECT * FROM Anuncio AS a JOIN Anuncio_Categoria AS ac ON
+                a.idAnuncio = ac.Anuncio_idAnuncio
+                JOIN Categoria AS c ON ac.Categoria_idCategoria = c.idCategoria
+                WHERE FIND_IN_SET(c.nome, :array)) AS T
+                WHERE titulo LIKE LOWER (:termo)  OR descricao LIKE LOWER (:termo)
+            ");
+
+            $sql->bindParam('array', $novoArrayCategorias);
+            $sql->bindParam('termo', $termo);
+
+        } else {
+            $sql = $pdo->prepare("
+                SELECT DISTINCT idAnuncio, titulo, descricao, valor FROM Anuncio AS a JOIN Anuncio_Categoria AS ac ON a.idAnuncio = ac.Anuncio_idAnuncio
+                JOIN Categoria AS c ON ac.Categoria_idCategoria = c.idCategoria
+                WHERE FIND_IN_SET(c.nome, :array)
+            ");
+
+            $sql->bindParam('array', $novoArrayCategorias);
+        }
+
+        $array = NULL;
+
+        if ($sql->execute() == true) {
+            // $sql->debugDumpParams();
+            if ($sql->rowCount() > 0) {
+                $array = $sql->fetchAll();
+            }
+        }
+
+        return $array;
+    }
+
+
     public function getAnunciosPorUsuario($idUsuario) {
         global $pdo;
         $sql = $pdo->prepare("SELECT * FROM Anuncio WHERE Usuario_idUsuario = ?");
@@ -220,7 +318,7 @@ class Anuncio {
         $this->imagens = $imagens;
     }
 
-    private function test_input($data) {
+    public function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);

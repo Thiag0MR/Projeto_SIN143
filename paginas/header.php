@@ -3,13 +3,16 @@ $serverDocRoot = str_replace ("\\", "/", $_SERVER['DOCUMENT_ROOT']);
 $dirName = str_replace ("\\", "/", dirname(__FILE__, 2));
 define('__ROOT__', str_replace($serverDocRoot, "", $dirName));
 require $serverDocRoot.__ROOT__.'/config.php';
+
+$pastaImagens = __ROOT__.'/imagens/';
+
 ?>
 
 <div id="cabecalho">
     <div class="logo">
         <div id="slide">
             <a href="/Projeto_SIN143">
-                <img id="tamanhoImg" src="<?php echo __ROOT__."/images/logo.png" ?>">
+                <img id="tamanhoImg" src="<?php echo $pastaImagens."/logo.png" ?>">
             </a>
         </div>
     </div>

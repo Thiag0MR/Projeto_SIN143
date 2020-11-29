@@ -19,12 +19,12 @@
                         <h1>Bem vindo ao Tem Vaga Aí ?</h1>
                         <h3>As melhores vagas em um só lugar !</h3>
                         <div id="divBusca">
-                          <form action="/action_page.php">
+                          <form method="GET" action="<?php echo __ROOT__.'/paginas/resultadoBusca.php'; ?>">
                             <div id="txtBusca">
-                                <input type="text" placeholder="Buscar..."/>
+                                <input type="text" name="buscar" placeholder="Buscar..."/>
                             </div>
                             <div id="Pesquisar">
-                                <input type="submit" value="Pesquisar">
+                                <input type="submit" name="" value="Pesquisar">
                             </div>
                           </form>
                         </div>
@@ -36,30 +36,26 @@
             <section id="SecaoCategorias">
                 <div class="container">
                     <ul class="linha">
-                        <li class="item">
-                            <a href="./paginas/Camas/Camas.html">
-                                <span><img src="./images/icons/bed.png" alt=""></span>
-                                <small>Camas</small>
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="./paginas/Sofas/Sofa.html">
-                                <span><img src="./images/icons/couch.png" alt=""></span>
-                                <small>Sofás</small>
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="./paginas/Redes/Redes.html">
-                                <span><img src="./images/icons/hammocks.png" alt=""></span>
-                                <small>Redes</small>
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#">
-                                <span><img src="./images/icons/wardrobe.png" alt=""></span>
-                                <small>Armários</small>
-                            </a>
-                        </li>
+                        <?php
+                            require "./classes/Categoria.class.php";
+                            $c = new Categoria();
+
+                            $categorias = $c->getNomeDasCategorias();
+                            if (isset($categorias) && !empty($categorias)) {
+                                foreach ($categorias as $categoria) {
+                                    $local = __ROOT__.'/paginas/resultadoBusca.php?buscar='.$categoria;
+                                    $icon = $pastaImagens.'/icons/'.$categoria.'.png';
+                                    echo "
+                                    <li class='item'>
+                                        <a href='$local'>
+                                            <span><img src='$icon' alt=''></span>
+                                            <small>$categoria</small>
+                                        </a>
+                                    </li>
+                                    ";
+                                }
+                            }
+                        ?>
                     </div>
                 </div>
             </section>
@@ -73,21 +69,26 @@
                         <input type="radio" name="r" id="r4">
                         <input type="radio" name="r" id="r5">
 
-                        <div  class="slide s1">
-                            <a href="./paginas/Camas/CamaMedia.html"><img src="./paginas/Camas/CamaMedia.jpg" alt="Cama"></a>
-                        </div>
-                        <div class="slide">
-                            <a href="./paginas/Redes/RedeCara.html"><img src="./paginas/Redes/RedeCara.jpg" alt="Rede"></a>
-                        </div>
-                        <div class="slide">
-                            <a href="./paginas/Sofas/SofaCaro.html"><img src="./paginas/Sofas/SofaCaro.jpg" alt="Sofá"></a>
-                        </div>
-                        <div class="slide">
-                            <a href="./paginas/Camas/CamaCara.html"><img src="./paginas/Camas/CamaCara.jpg" alt="Cama"></a>
-                        </div>
-                        <div class="slide">
-                            <a href="./paginas/Redes/RedeBarata.html"><img src="./paginas/Redes/RedeBarata.jpg" alt="Rede"></a>
-                        </div>
+                        <?php
+                        $imagensSlidePrincipal = array('anuncios/espaco1.jpg','anuncios/espaco2.jpg',
+                            'anuncios/espaco3.jpg','anuncios/quarto1.png','anuncios/quarto4.jpg');
+
+                        for($i = 0; $i < count($imagensSlidePrincipal); $i++) {
+                            if ($i == 0) {
+                                echo "
+                                <div  class='slide s1'>
+                                    <img src='{$pastaImagens}{$imagensSlidePrincipal[$i]}' alt='Imagem'>
+                                </div>
+                                ";
+                            } else {
+                                echo "
+                                <div  class='slide'>
+                                    <img src='{$pastaImagens}{$imagensSlidePrincipal[$i]}' alt='Imagem'>
+                                </div>
+                                ";
+                            }
+                        }
+                        ?>
                     </div>
 
                     <div class="navigation">
