@@ -4,10 +4,10 @@
             <h5 style="color:black">Institucional</h5>
             <ul>
 
-                <li><a href="<?php echo __ROOT__."/paginas/Rodape/Duvidas.php"?>">Dúvidas</a></li>
+                <li><a href="#">Dúvidas</a></li>
                 <li><a href="<?php echo __ROOT__."/paginas/Rodape/QuemSomos.php"?>">Quem Somos</a></li>
                 <li><a href="<?php echo __ROOT__."/paginas/Rodape/politicaDePrivacidade.php"?>">Política de Privacidade</a></li>
-                <li><a href="<?php echo __ROOT__."/paginas/PaginaNaoCriada.php"?>">Termos e Condições</a></li>
+                <li><a href="#">Termos e Condições</a></li>
             </ul>
         </div>
         <div class="bloco">

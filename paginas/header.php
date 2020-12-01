@@ -11,7 +11,7 @@ $pastaImagens = __ROOT__.'/imagens/';
 <div id="cabecalho">
     <div class="logo">
         <div id="slide">
-            <a href="/Projeto_SIN143">
+            <a href="<?php echo __ROOT__ ?>">
                 <img id="tamanhoImg" src="<?php echo $pastaImagens."/logo.png" ?>">
             </a>
         </div>
